@@ -1,32 +1,58 @@
 {
-  "title": "PAD4-DB: A Curated Structure-Activity Resource for PAD4 Inhibitors",
-  "description": "PAD4-DB is a standardized, deduplicated knowledge base of 3,093 structurally resolved PAD4 (PADI4) inhibitors with consensus pIC50 values, and a parallel high-throughput-screening layer of 327,336 screened compounds. The resource includes Murcko scaffold annotations, per-compound source-independence scores, the severe activity-cliff network, four hub-compound labels, a per-scaffold ruggedness ranking, and matched-molecular-pair transformation typology. Canonical counts: 3,093 compounds, 94 severe activity cliffs, 4 hub compounds, 1,244 unique Murcko scaffolds.",
+  "title": "PAD4-DB v1.0: A Curated Structure-Activity Resource for PAD4 Inhibitors",
+  "description": "PAD4-DB is a standardized, deduplicated knowledge base of 3,093 structurally resolved PAD4 (PADI4) inhibitors with consensus pIC50 values (range 2.00-8.52, median 6.84), assembled from PubChem BioAssay, ChEMBL (assay CHEMBL6111), and BindingDB (UniProt Q9UM07) through a fully scripted curation pipeline. Includes Murcko scaffold annotations, per-compound source-independence scores, the severe activity-cliff network (94 severe pairs), four hub-compound labels (53.2% hub concentration, 4 compounds), a per-scaffold ruggedness ranking (96.8% smooth series), and matched-molecular-pair transformation typology (80/94 severe cliffs MMP-confirmed). Structures standardized with RDKit 2025.09.5. Source licenses: PubChem (public domain), ChEMBL (CC BY-SA 4.0), BindingDB (CC BY 4.0).",
   "upload_type": "dataset",
   "authors": [
-    {"name": "[Author 1, Last, First]", "affiliation": "[Affiliation 1]", "orcid": "[ORCID]"},
-    {"name": "[Author 2, Last, First]", "affiliation": "[Affiliation 2]", "orcid": "[ORCID]"},
-    {"name": "[Corresponding Author, Last, First]", "affiliation": "[Affiliation 1]", "orcid": "[ORCID]"}
+    {"name": "[Author 1, Last, First]", "affiliation": "[Affiliation 1]", "orcid": "[ORCID — or remove this field if not available]"},
+    {"name": "[Author 2, Last, First]", "affiliation": "[Affiliation 2]", "orcid": "[ORCID — or remove this field if not available]"},
+    {"name": "[Corresponding Author, Last, First]", "affiliation": "[Affiliation 1]", "orcid": "[ORCID — or remove this field if not available]"}
   ],
   "keywords": [
     "PAD4",
     "PADI4",
     "protein arginine deiminase",
+    "PAD4 inhibitors",
     "activity cliffs",
     "structure-activity relationships",
+    "SAR ruggedness",
     "cheminformatics",
     "matched molecular pairs",
-    "SAR ruggedness",
+    "bioactivity database",
+    "RDKit",
+    "PubChem",
+    "ChEMBL",
+    "BindingDB",
     "drug discovery"
   ],
-  "license": "CC-BY-4.0",
+  "license": "CC-BY-SA-4.0",
   "access_right": "open",
   "version": "1.0",
-  "publication_date": "2026-06-21",
+  "publication_date": "[UPDATE TO ACTUAL UPLOAD DATE — format: YYYY-MM-DD]",
+  "funding": [
+    {
+      "funder": {"name": "[Grant agency — e.g. Wellcome Trust, NIH, EPSRC]"},
+      "award": {"number": "[grant number]", "title": "[grant title if applicable — or remove]"}
+    }
+  ],
   "related_identifiers": [
-    {"identifier": "[manuscript DOI - to be assigned]", "relation": "isSupplementTo", "resource_type": "publication-article"}
+    {
+      "identifier": "[manuscript DOI — to be assigned upon publication]",
+      "relation": "isSupplementTo",
+      "resource_type": "publication-article"
+    },
+    {
+      "identifier": "https://github.com/Nidhal212/PAD4-DB",
+      "relation": "isSupplementTo",
+      "resource_type": "software"
+    }
   ],
   "_placeholders_to_fill_before_deposition": [
-    "authors[].name, affiliation, orcid",
-    "related_identifiers[].identifier (manuscript DOI)"
+    "authors[0..2].name — real names in 'Last, First' format",
+    "authors[0..2].affiliation — full institution name",
+    "authors[0..2].orcid — ORCID iD (format: 0000-0000-0000-0000) or remove field entirely",
+    "funding[0].funder.name — grant agency name",
+    "funding[0].award.number — grant number",
+    "related_identifiers[0].identifier — manuscript DOI (assign after journal acceptance)",
+    "publication_date — set to actual Zenodo upload date"
   ]
 }
