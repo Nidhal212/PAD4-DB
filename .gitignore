@@ -1,0 +1,76 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# CONFIDENTIAL — manuscript & figures held back until submission strategy is final
+# (regenerable from scripts + released data; see REPOSITORY_AND_DEPOSITION_AUDIT.md)
+# ─────────────────────────────────────────────────────────────────────────────
+publication/manuscript/
+publication/figures/
+PAD4_DB_FREEZE_v1.0/manuscript/
+outputs/manuscript/
+*.docx
+*.pdf
+# writing / submission artifacts (cover letters, responses, drafts, notes)
+**/cover_letter*
+**/response*to*review*
+**/*reviewer*response*
+**/*_draft*
+**/*revision_history*
+**/submission/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Internal process / audit / submission-strategy docs (never public)
+# ─────────────────────────────────────────────────────────────────────────────
+DEPLOYMENT_REPORT.md
+FINAL_REVIEWER_RESPONSE_MATRIX.md
+FIGURE_READINESS_REMEDIATION_REPORT.md
+HANDOFF.md
+REPOSITORY_AND_DEPOSITION_AUDIT.md
+FREEZE_REPORT.md
+FREEZE_DECISION.md
+builder_audit_report.md
+git_safety_report.md
+smoothness_harmonization_report.md
+SUBMISSION_READINESS_REPORT.md
+deploy_commands.sh
+repro_audit/
+outputs/audit/final_submission/
+data/interim_repro/
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Large raw/intermediate data (regenerable; not part of the release)
+# ─────────────────────────────────────────────────────────────────────────────
+data/raw/
+data/interim/
+data/processed/
+data/processed_repro/
+outputs/audit/
+outputs/review/
+outputs/stress_test/
+outputs/tables/nature_v2/
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.ipynb_checkpoints/
+
+# Environments
+venv/
+env/
+.venv/
+
+# IDE / OS
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# Temporary
+*.tmp
+*.log
+*.bak
+
+# Deposition archive (rebuilt on demand)
+pad4db_zenodo_*.tar.gz

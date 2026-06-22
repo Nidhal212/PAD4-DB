@@ -1,0 +1,32 @@
+{
+  "title": "PAD4-DB: A Curated Structure-Activity Resource for PAD4 Inhibitors",
+  "description": "PAD4-DB is a standardized, deduplicated knowledge base of 3,093 structurally resolved PAD4 (PADI4) inhibitors with consensus pIC50 values, and a parallel high-throughput-screening layer of 327,336 screened compounds. The resource includes Murcko scaffold annotations, per-compound source-independence scores, the severe activity-cliff network, four hub-compound labels, a per-scaffold ruggedness ranking, and matched-molecular-pair transformation typology. Canonical counts: 3,093 compounds, 94 severe activity cliffs, 4 hub compounds, 1,244 unique Murcko scaffolds.",
+  "upload_type": "dataset",
+  "authors": [
+    {"name": "[Author 1, Last, First]", "affiliation": "[Affiliation 1]", "orcid": "[ORCID]"},
+    {"name": "[Author 2, Last, First]", "affiliation": "[Affiliation 2]", "orcid": "[ORCID]"},
+    {"name": "[Corresponding Author, Last, First]", "affiliation": "[Affiliation 1]", "orcid": "[ORCID]"}
+  ],
+  "keywords": [
+    "PAD4",
+    "PADI4",
+    "protein arginine deiminase",
+    "activity cliffs",
+    "structure-activity relationships",
+    "cheminformatics",
+    "matched molecular pairs",
+    "SAR ruggedness",
+    "drug discovery"
+  ],
+  "license": "CC-BY-4.0",
+  "access_right": "open",
+  "version": "1.0",
+  "publication_date": "2026-06-21",
+  "related_identifiers": [
+    {"identifier": "[manuscript DOI - to be assigned]", "relation": "isSupplementTo", "resource_type": "publication-article"}
+  ],
+  "_placeholders_to_fill_before_deposition": [
+    "authors[].name, affiliation, orcid",
+    "related_identifiers[].identifier (manuscript DOI)"
+  ]
+}

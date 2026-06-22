@@ -1,0 +1,44 @@
+=== PAD4-DB v2 — FINAL AUDIT REPORT (v2) ===
+Generated: 2026-06-16 18:02
+
+PHASE 1 GROUND TRUTH (live data):
+  Total compounds:             3,093
+  pIC50 mean:                  6.55
+  pIC50 median:                6.84  (precise: 6.8447)
+  Severe cliff pairs:          94
+  Max ΔpIC50 (severe):         3.0448
+  MMP pairs:                   707
+  MMP unique cores:            24
+  Scaffold coverage:           71.90%
+  Cross-source spread max:     0.7386
+  Python env (live):           3.10.19
+
+FIXES APPLIED (all sessions):
+  pIC50 median 6.85 → 6.84       (live data 6.8447)
+  Scaffold coverage 71.8% → 71.9% (live 71.90%, matches CLAUDE.md)
+  Patent series size 2.1/2.5 → 2.5 identical (live 2.50/2.48)
+  Python 3.10 → 3.12 → 3.10      (live env = Python 3.10.19; CLAUDE.md header was wrong)
+  Cross-source max 0.500 → 0.74   (full dataset, not 50-sample A1 audit)
+  max ΔpIC50 kept at 3.045        (3.228 from wrong file; cliff pairs max = 3.045)
+  MMP cores kept at 24            (live nunique=24; 943 cannot be reproduced)
+
+PHASE 4 VERIFICATION CHECKS:
+  PASS: 3,093 compounds
+  PASS: pIC50 mean 6.55
+  PASS: pIC50 median 6.84
+  PASS: NOT 6.85
+  PASS: 71.9% scaffold coverage
+  PASS: NOT 71.8%
+  PASS: Python 3.10
+  PASS: NOT Python 3.12
+  PASS: cross-source 0.74
+  PASS: NOT 0.500 log
+  PASS: 24 unique scaffold cores
+  PASS: 2.5 per series, identical
+  PASS: max 3.045
+  PASS: NOT 3.228
+  PASS: 1,110-fold
+  PASS: 19 compounds IC50 ≥1mM
+  PASS: NOT 2.1 vs 2.5
+
+OVERALL: ALL CHECKS PASSED

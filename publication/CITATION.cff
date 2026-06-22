@@ -1,0 +1,47 @@
+cff-version: 1.2.0
+message: "If you use PAD4-DB v2, please cite it as below."
+type: dataset
+title: "PAD4-DB v2: A Provenance-First Database of PAD4 Inhibitors with Activity Cliff Characterization and Source Independence Scoring"
+version: "2.0.0"
+date-released: "2026-06-16"
+doi: "[TBD — fill after Zenodo deposition]"
+url: "https://github.com/[TBD]"
+license: CC-BY-4.0
+abstract: >
+  PAD4-DB v2 is a curated, provenance-first database of 3,093 human PAD4
+  (peptidylarginine deiminase 4) inhibitors integrated from 95 PubChem
+  bioassays, ChEMBL, and BindingDB. The database provides consensus pIC50
+  values, source independence scores distinguishing pipeline re-curation from
+  genuine experimental replication, systematic activity cliff characterization
+  (94 severe pairs, 90.4% MMP-validated), and cliff-hub annotations for four
+  hub compounds in two structural classes covering 53.2% of severe cliff pairs.
+  A 327,336-compound HTS structural reference is included. All curation scripts
+  and audit trails are deposited for full reproducibility.
+keywords:
+  - PAD4
+  - peptidylarginine deiminase
+  - PAD4 inhibitors
+  - activity cliffs
+  - matched molecular pairs
+  - structure-activity relationships
+  - bioactivity database
+  - drug discovery
+  - machine learning benchmarking
+  - source independence
+authors:
+  - name: "[Author names TBD]"
+    affiliation: "[Affiliation TBD]"
+references:
+  - type: software
+    title: "RDKit: Open-source cheminformatics"
+    version: "2025.09.5"
+    url: "https://www.rdkit.org"
+  - type: database
+    title: "PubChem BioAssay"
+    url: "https://pubchem.ncbi.nlm.nih.gov/bioassay/"
+  - type: database
+    title: "ChEMBL"
+    url: "https://www.ebi.ac.uk/chembl/"
+  - type: database
+    title: "BindingDB"
+    url: "https://www.bindingdb.org"

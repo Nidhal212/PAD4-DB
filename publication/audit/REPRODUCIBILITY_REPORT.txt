@@ -1,0 +1,30 @@
+PAD4-DB v2 Reproducibility Report
+Run: 2026-06-16 11:50:10.363301
+
+Metric                                          Expected      Repro  Status
+----------------------------------------------------------------------
+SAR compounds                                       3093       3093  ✅ PASS
+pIC50 min                                            2.0      2.000  ✅ PASS
+pIC50 max                                           8.52      8.523  ✅ PASS
+pIC50 mean                                          6.55      6.550  ✅ PASS
+pIC50 median                                       6.845      6.845  ✅ PASS
+pIC50 std                                          0.992      0.992  ✅ PASS
+Patent-exclusive (PubChem only)                      233        233  ✅ PASS
+BindingDB-only compounds                              95         95  ✅ PASS
+ChEMBL-only compounds                                 10         10  ✅ PASS
+is_true_multi_source (≥0.6)                          528        528  ✅ PASS
+Total cliff pairs                                    867        867  ✅ PASS
+Severe cliff pairs                                    94         94  ✅ PASS
+Moderate cliff pairs                                 193        193  ✅ PASS
+Broad cliff pairs                                    580        580  ✅ PASS
+Severe cliff compounds                                99         99  ✅ PASS
+Max |ΔpIC50|                                       3.045      3.045  ✅ PASS
+Unique scaffolds                                    1244       1244  ✅ PASS
+Series scaffolds (≥2)                                375        375  ✅ PASS
+Largest series                                       174        174  ✅ PASS
+Hub A1 degree                                         15         15  ✅ PASS
+Hub A2 degree                                         12         12  ✅ PASS
+Hub B1 degree                                         12         12  ✅ PASS
+Hub B2 degree                                         11         11  ✅ PASS
+
+RESULT: ALL PASS

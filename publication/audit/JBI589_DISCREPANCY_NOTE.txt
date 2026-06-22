@@ -1,0 +1,11 @@
+JBI-589 pIC50 Discrepancy Note
+PAD4-DB v2 | Generated: 2026-06-15T09:17:28.030539
+
+JBI-589 pIC50 discrepancy of 0.9 log units relative to the published value
+(published: 6.914 / 122 nM; database: 6.000 / 1000 nM).
+
+Likely attributable to assay Ca²⁺-concentration dependence, consistent
+with known PAD4 calcium sensitivity. PAD4 enzymatic activity varies
+substantially with free Ca²⁺ concentration; different laboratories use
+0.5–5 mM CaCl₂, leading to IC50 variation of > 1 log unit for the same
+compound. Formal verification is outside the scope of this curation study.

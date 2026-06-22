@@ -1,0 +1,25 @@
+PAD4-DB v2 — Source Independence Score Formula
+Generated: 2026-06-15T09:17:28.238366
+
+For the Methods section.
+
+The source_independence_score quantifies the degree to which a compound's
+bioactivity data derives from genuinely independent experimental sources.
+
+Score mapping (from scripts/04_dedup/04b_add_independence_scores.py):
+
+  source_list                                    score
+  BindingDB + ChEMBL + PubChem (confirmatory)   0.3
+  BindingDB + PubChem (confirmatory)             0.5
+  BindingDB + ChEMBL                             0.6
+  Any other two-source combination               0.7
+  Single source only                             1.0
+
+Logic: The three dominant source combinations (BindingDB + PubChem,
+BindingDB + ChEMBL + PubChem) all share BindingDB as an aggregator
+of PubChem bioassay data, reducing effective independence. Score 0.3
+reflects the lowest independence (all three sources share PubChem origin).
+Score 1.0 means the compound appears in only one database.
+
+Interpretation threshold: score >= 0.6 identifies 528 'truly independent'
+compounds (i.e., not primarily driven by PubChem-BindingDB co-curation).

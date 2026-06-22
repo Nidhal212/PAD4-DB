@@ -1,0 +1,18 @@
+PAD4-DB v2 Manuscript Number Verification
+==================================================
+
+max_delta_all_cliffs: 3.044793462458058
+max_delta_severe: 3.044793462458058
+max_delta_all_pairs: 3.22767829327708
+correct_fold: 1108.647450110864
+n_weak_binders_postdedup: 19
+patent_cliff_all_tiers: 34
+patent_cliff_severe: 1
+mmp_unique_cores: 24
+max_cross_source_delta: 0.5
+scaffold_coverage_pct: 71.90430003233107
+moderate_cliff_compounds: 209
+patent_scaffold_mean: 2.1067961165048543
+nonpatent_scaffold_mean: 2.5205959684487294
+chembl5841052_verified: True
+chembl5864263_verified: True

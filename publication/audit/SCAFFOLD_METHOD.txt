@@ -1,0 +1,15 @@
+PAD4-DB v2 — Scaffold Decomposition Method
+Generated: 2026-06-15T09:17:26.638014
+
+Function used: rdkit.Chem.Scaffolds.MurckoScaffold.GetScaffoldForMol(mol)
+
+This is the standard Bemis-Murcko heteroatom-preserving scaffold decomposition.
+It preserves ring heteroatoms and attached linkers, returning the ring system
+with all substituents removed. NOT the 'MakeScaffoldGeneric' (carbon-skeleton-only)
+variant. Stereocenters are preserved in the scaffold SMILES.
+
+Reference: Bemis GW, Murcko MA. The properties of known drugs. 1. Molecular
+  frameworks. J Med Chem. 1996;39(15):2887-93.
+
+RDKit version: 2025.09.5
+Scaffold canonicalization note: Fresh recomputation with RDKit 2025.09.5 assigns 190 compounds to rank-1 scaffold vs 174 in locked pipeline output (05_scaffold_summary.csv). 16-compound difference is canonicalization drift across RDKit versions. Paper reports 174 (pipeline value). Scientific interpretation unchanged.

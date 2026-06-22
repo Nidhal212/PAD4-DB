@@ -1,0 +1,27 @@
+PAD4-DB v2 — Data Download Dates
+Generated: 2026-06-15T09:17:28.251646
+
+Earliest source file mtime: 1980-01-01
+Latest source file mtime:   2026-06-14
+
+File-by-file timestamps:
+  AID_1069613_datatable_all.csv: 2026-06-14
+  AID_1069614_datatable_all.csv: 2026-06-14
+  AID_1069618_datatable_all.csv: 2026-06-14
+  AID_1069619_datatable_all.csv: 2026-06-14
+  AID_1069623_datatable_all.csv: 2026-06-14
+  CHEMBL6111_Protein-arginine deiminase type_4.csv: 1980-01-01
+  bindingdb_Q9UM07.tsv: 2026-06-10
+
+DOWNLOAD DATE CORRECTIONS (added 2026-06-16):
+  CHEMBL6111 file mtime shows 1980-01-01 — this is a known Linux unzip
+  timestamp artifact (unzip strips internal ZIP timestamps to epoch by
+  default). Actual download date confirmed as 2026-06-14 from:
+    - Directory mtime: data/raw/chembl/ → 2026-06-14 17:41
+    - Batch download context in AID_dowloed.py header (June 2026)
+    - Consistent with PubChem download window (2026-06-10 to 2026-06-14)
+
+CORRECTED DOWNLOAD DATES (for Methods section):
+  PubChem bioassay data:  2026-06-10 to 2026-06-14
+  ChEMBL (CHEMBL6111):    2026-06-14
+  BindingDB (Q9UM07):     2026-06-10

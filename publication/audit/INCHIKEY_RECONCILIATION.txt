@@ -1,0 +1,17 @@
+PAD4-DB v2 — InChIKey Reconciliation
+Generated: 2026-06-15T09:17:24.146044
+
+SAR (pad4_compounds.parquet):       3,093
+HTS (hts_compound_index.parquet):   327,336
+Overlap (in both SAR and HTS):      1,453
+Union (total unique):               328,976
+
+Arithmetic: 3093 + 327336 - 1453 = 328,976
+
+Claimed in CLAUDE.md: 328,976 unique InChIKeys total
+Actual union:         328,976
+Status: MATCH
+
+The 1,453 compounds confirmed in potency space (HTS confirmed_in_potency_space)
+are counted in both sets. They represent compounds screened in HTS assays
+that also have quantitative IC50 data in the SAR set.
