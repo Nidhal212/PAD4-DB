@@ -74,3 +74,28 @@ Thumbs.db
 
 # Deposition archive (rebuilt on demand)
 pad4db_zenodo_*.tar.gz
+
+# Snakemake cache
+.snakemake/
+
+# Freeze directories (large data; deposited separately)
+PAD4_DB_FREEZE_v1.0/
+PAD4_DB_FREEZE_v2.0/
+
+# Internal / legacy docs
+PRIVATE_CONTENTS.md
+CANONICAL_FILES.md
+FINAL_FREEZE_REORGANIZATION_REPORT.md
+FREEZE_INVENTORY.md
+PROJECT_FREEZE_MANIFEST_v1.0.md
+PUBLIC_REPOSITORY_CONTENTS.md
+SUBMISSION_PACKAGE_CHECKLIST.md
+ZENODO_RELEASE_CONTENTS.md
+HANDOFF.md
+covaltest.py
+AID_dowloed.py
+archive/
+zenodo/
+logs/
+outputs/tables/
+outputs/

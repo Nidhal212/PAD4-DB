@@ -1,0 +1,173 @@
+# PAD4-DB v2 — Snakemake Configuration
+# ============================================================
+# Central parameter store for the pipeline.
+# Edit here rather than in individual scripts.
+# ============================================================
+
+# ── Directory layout ─────────────────────────────────────────
+data_raw:        "data/raw"
+data_interim:    "data/interim"
+data_processed:  "data/processed"
+outputs:         "outputs"
+
+# ── PubChem AID registry ─────────────────────────────────────
+# Reference list of all AIDs loaded by the pipeline.
+# Mirrors the REGISTRY dict in scripts 01 and 02.
+# Used to validate raw inventory and document provenance.
+
+hts_aids:
+  - 463073
+  - 485272
+  - 488796
+
+confirmatory_aids:
+  - 492970
+  - 320707
+  - 1804546
+  - 1804627
+  - 1805620
+  - 1806182
+  - 1806183
+  - 1806764
+  - 1919095
+  - 1920200
+  - 1963715
+  - 2202576
+  - 2202577
+  - 2202596
+  - 2202597
+  - 2202717
+  - 2202442
+  - 1330527
+  - 1471656
+  - 1474465
+  - 1474486
+  - 1511938
+  - 1632998
+  - 1651501
+  - 1651502
+  - 1813082
+  - 1813806
+  - 1875531
+  - 1920046
+  - 1973686
+  - 1993481
+  - 2006936
+  - 2034405
+  - 2034406
+  - 2034407
+  - 2071731
+  - 2134413
+  - 2200614
+  - 1422897
+  - 725673
+  - 725596
+  - 725597
+  - 725598
+  - 1196525
+  - 1069613
+  - 1069619
+  - 1069623
+  - 627371
+  - 627428
+  - 627432
+  - 626724
+  - 626728
+  - 1069614
+  - 1069618
+  - 588488
+  - 588559
+  - 588560
+
+literature_aids:
+  - 626735
+  - 626738
+  - 712876
+  - 725671
+  - 1069608
+  - 1196521
+  - 1364668
+  - 1422898
+  - 1422904
+  - 2076402
+  - 651867
+
+secondary_aids:
+  - 2041348
+  - 2041349
+  - 2053867
+  - 2053915
+  - 2053917
+  - 2193457
+  - 1625405
+  - 1806765
+  - 1069597
+  - 1069598
+  - 1069599
+  - 1069600
+  - 1069601
+  - 1069604
+  - 1069605
+  - 1069606
+  - 588487
+  - 651627
+  - 1346144
+  - 2039667
+  - 2053916
+  - 627442
+  - 627443
+  - 1422917
+
+# ── Dual-layer AID decisions ─────────────────────────────────
+# AIDs 1920046 and 2202442: canonical copy = confirmatory/
+# AIDs 2202576/2202577: prefer 2202577 for the 55 overlapping SIDs
+
+dual_layer_canonical:
+  - 1920046
+  - 2202442
+
+rfms_preferred_aid: 2202577
+rfms_aids:
+  - 2202576
+  - 2202577
+
+# ── Quality thresholds ───────────────────────────────────────
+min_pct_ok: 85                    # minimum % rows parsed OK per source
+
+# ── Potency aggregation ──────────────────────────────────────
+# Step 03: replicate groups aggregated by log-mean
+total_expected_rows: 339687       # canonical assertion in 03a_split_spaces
+
+# ── Fingerprint + cliff parameters ──────────────────────────
+fp_radius: 2                      # Morgan fingerprint radius (ECFP4)
+fp_nbits: 2048                    # fingerprint bit length
+sim_threshold_pairs: 0.6          # minimum Tanimoto to include a pair
+sim_threshold_cliff: 0.8          # minimum Tanimoto for cliff classification
+
+pic50_severe:   2.0               # |ΔpIC50| threshold: severe cliffs
+pic50_moderate: 1.5               # |ΔpIC50| threshold: moderate cliffs
+pic50_broad:    1.0               # |ΔpIC50| threshold: broad cliffs
+
+batch_size: 500                   # fingerprint similarity batch size
+
+# ── Source independence score weights ────────────────────────
+# frozenset(sources) → score; single-source = 1.0 (hardcoded)
+independence_scores:
+  bindingdb+chembl+pubchem_confirmatory: 0.3
+  bindingdb+pubchem_confirmatory:        0.5
+  bindingdb+chembl:                      0.6
+  other_multi_source:                    0.7  # fallback for unlisted combos
+
+independence_threshold: 0.6       # score >= this → non-redundant compound
+
+# ── Canonical number assertions ──────────────────────────────
+# Pre-flight checks in Step 05. Any deviation is a pipeline error.
+canonical:
+  n_compounds:       3093
+  n_severe_cliffs:   94
+  n_hub_compounds:   4
+  n_scaffolds:       1244
+  n_mmp_pairs:       707
+  n_mmp_cores:       24
+  pic50_median:      6.84
+  pic50_mean:        6.550
