@@ -99,3 +99,7 @@ zenodo/
 logs/
 outputs/tables/
 outputs/
+
+# Ultimate final version (data too large for git)
+PAD4_DB_FINAL/
+_archive/
