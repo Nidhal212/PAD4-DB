@@ -132,7 +132,8 @@ panel_label(axA, 'a', x=-0.18, y=1.04)
 # B: series size vs potency range, colour=cliff density
 dnorm = Normalize(vmin=0, vmax=max(rt.cliff_density.max(), 1e-6))
 sc2 = axB.scatter(rt.series_size, rt.potency_range, c=rt.cliff_density, cmap='magma_r',
-                  norm=dnorm, s=16, alpha=0.8, edgecolors='none', rasterized=True)
+                  norm=dnorm, s=16, alpha=0.8, edgecolors='#4d4d4d', linewidths=0.3,
+                  rasterized=True)   # thin dark edge: cliff_density=0 maps to near-white magma_r fill, invisible on white bg without it
 axB.set_xscale('log'); axB.set_xlabel('Series size (log)'); axB.set_ylabel('Intra-scaffold pIC50 range')
 axB.set_title('Size vs potency range', fontsize=6.5, pad=3)
 cb2 = fig.colorbar(sc2, ax=axB, shrink=0.7, aspect=14, pad=0.02); cb2.set_label('cliff density', fontsize=6)

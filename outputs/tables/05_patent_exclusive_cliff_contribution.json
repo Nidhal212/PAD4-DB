@@ -1,0 +1,9 @@
+{
+  "dataset_a_n_compounds": 3093,
+  "dataset_b_n_compounds": 2860,
+  "severe_cliffs_a": 94,
+  "severe_cliffs_b": 93,
+  "cliff_delta": 1,
+  "cliff_delta_pct": 1.06,
+  "verdict": "weak_contribution"
+}

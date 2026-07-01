@@ -1,5 +1,0 @@
-inchi_key,smiles_std,pIC50,murcko_smiles,mol_weight,source_list,hub_class
-SMADULGDNOCLOP-GISFHXKWSA-N,COc1cc(-c2ccc3cc(-c4nc5cc(C(=O)N6CC7CCC6[C@@H]7N)cc(OC)c5n4C)n(CC4CC4)c3n2)c(F)cc1O,5.389872386924004,O=C(c1ccc2[nH]c(-c3cc4ccc(-c5ccccc5)nc4n3CC3CC3)nc2c1)N1CC2CCC1C2,610.69,bindingdb|chembl|pubchem_confirmatory,A
-RAVBZQAQTVGKIV-XBPDSQQVSA-N,CCc1cc(-c2ccc3cc(-c4nc5cc(C(=O)N6CC7CCC6[C@@H]7N)cc(OC)c5n4C)n(CC4CC4)c3n2)ccc1O,5.340844719059372,O=C(c1ccc2[nH]c(-c3cc4ccc(-c5ccccc5)nc4n3CC3CC3)nc2c1)N1CC2CCC1C2,590.728,bindingdb|chembl|pubchem_confirmatory,A
-UDCDEKJNAMHBFH-HSZRJFAPSA-N,COc1cc(C(=O)N2CCC[C@@H](N)C2)cc2nc(-c3cc4ccc(N(CC5CC5)S(C)(=O)=O)nc4n3CC3CC3)n(C)c12,4.301029995663981,O=C(c1ccc2[nH]c(-c3cc4ccc(NCC5CC5)nc4n3CC3CC3)nc2c1)N1CCCCC1,605.765,bindingdb|pubchem_confirmatory,B
-DVCKJOQIVOGXEI-XMMPIXPASA-N,COc1cc(C(=O)N2CCC[C@@H](N)C2)cc2nc(-c3cc4ccc(N(CC5CCC5)S(C)(=O)=O)nc4n3CC3CC3)n(C)c12,4.301029995663981,O=C(c1ccc2[nH]c(-c3cc4ccc(NCC5CCC5)nc4n3CC3CC3)nc2c1)N1CCCCC1,619.792,bindingdb|pubchem_confirmatory,B

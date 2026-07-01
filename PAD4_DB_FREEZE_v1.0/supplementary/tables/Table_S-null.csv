@@ -1,4 +1,0 @@
-null_model,obs_cliffs,null_cliffs_mean,null_cliffs_sd,cliff_fold_depletion,cliff_p,obs_hub_share_pct,null_hub_share_mean_pct,null_hub_share_sd_pct,hub_fold_enrichment,hub_z,hub_p
-unrestricted,94,1224.8,100.2,13.0,9.999000099990002e-05,53.2,13.6,2.5,3.9,15.9,9.999000099990002e-05
-scaffold_constrained,94,101.3,13.3,1.1,0.31966803319668036,53.2,40.1,5.1,1.3,2.6,0.0105989401059894
-assay_constrained,94,1411.2,109.0,15.0,9.999000099990002e-05,53.2,13.4,2.2,4.0,18.2,9.999000099990002e-05

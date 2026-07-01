@@ -100,7 +100,7 @@ ax_b.annotate(f'S2: n={int(r2.n_compounds)}, 0 cliffs (smooth, σ={r2.std_pic50:
 ax_b.set_xlabel('Scaffold series size')
 ax_b.set_ylabel('Within-scaffold severe cliffs')
 ax_b.set_title('Ruggedness is scaffold-intrinsic, not a sampling artifact', fontsize=6.5, pad=3)
-ax_b.legend(fontsize=5.5, loc='upper right', framealpha=0.0)
+ax_b.legend(fontsize=5.5, loc='lower right', framealpha=0.0)
 panel_label(ax_b, 'b', x=-0.16, y=1.04)
 
 save_fig(fig, str(OUT / 'fig_s01_scaffold_cliff_density'))

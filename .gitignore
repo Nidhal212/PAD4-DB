@@ -1,24 +1,12 @@
-# ─────────────────────────────────────────────────────────────────────────────
-# CONFIDENTIAL — manuscript & figures held back until submission strategy is final
-# (regenerable from scripts + released data; see REPOSITORY_AND_DEPOSITION_AUDIT.md)
-# ─────────────────────────────────────────────────────────────────────────────
+# ── Manuscript and figures (held until publication) ──────────────────────────
 publication/manuscript/
 publication/figures/
-PAD4_DB_FREEZE_v1.0/manuscript/
-outputs/manuscript/
 *.docx
 *.pdf
-# writing / submission artifacts (cover letters, responses, drafts, notes)
 **/cover_letter*
-**/response*to*review*
-**/*reviewer*response*
-**/*_draft*
-**/*revision_history*
 **/submission/
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Internal process / audit / submission-strategy docs (never public)
-# ─────────────────────────────────────────────────────────────────────────────
+# ── Internal process docs (never public) ─────────────────────────────────────
 DEPLOYMENT_REPORT.md
 FINAL_REVIEWER_RESPONSE_MATRIX.md
 FIGURE_READINESS_REMEDIATION_REPORT.md
@@ -32,22 +20,33 @@ smoothness_harmonization_report.md
 SUBMISSION_READINESS_REPORT.md
 deploy_commands.sh
 repro_audit/
-outputs/audit/final_submission/
-data/interim_repro/
 
-# ─────────────────────────────────────────────────────────────────────────────
-# Large raw/intermediate data (regenerable; not part of the release)
-# ─────────────────────────────────────────────────────────────────────────────
+# ── Raw and intermediate data (large; regenerable from Snakemake pipeline) ───
 data/raw/
 data/interim/
-data/processed/
 data/processed_repro/
+data/interim_repro/
+
+# ── Processed dataset — INCLUDED in repo (small enough; main contribution) ───
+# data/processed/ is tracked — see data/processed/*.parquet
+
+# ── Output tables — INCLUDED (analysis results for transparency) ─────────────
+# outputs/tables/ is tracked — see outputs/tables/*.csv and *.json
+
+# ── Outputs to exclude (large, auto-generated, or internal) ──────────────────
 outputs/audit/
 outputs/review/
 outputs/stress_test/
 outputs/tables/nature_v2/
+outputs/tables/*_dryrun*
+outputs/tables/*.html
+outputs/tables/*.tex
+outputs/tables/fig*.html
+outputs/tables/nature/
+outputs/manuscript/
 
-# Python
+# ── Snakemake and Python ──────────────────────────────────────────────────────
+.snakemake/
 __pycache__/
 *.py[cod]
 *.egg-info/
@@ -55,34 +54,24 @@ build/
 dist/
 .ipynb_checkpoints/
 
-# Environments
+# ── Environments / IDE / OS ───────────────────────────────────────────────────
 venv/
 env/
 .venv/
-
-# IDE / OS
 .vscode/
 .idea/
 *.swp
 .DS_Store
 Thumbs.db
 
-# Temporary
+# ── Temporary ─────────────────────────────────────────────────────────────────
 *.tmp
 *.log
 *.bak
-
-# Deposition archive (rebuilt on demand)
+logs/
 pad4db_zenodo_*.tar.gz
 
-# Snakemake cache
-.snakemake/
-
-# Freeze directories (large data; deposited separately)
-PAD4_DB_FREEZE_v1.0/
-PAD4_DB_FREEZE_v2.0/
-
-# Internal / legacy docs
+# ── Legacy and scratch files ──────────────────────────────────────────────────
 PRIVATE_CONTENTS.md
 CANONICAL_FILES.md
 FINAL_FREEZE_REORGANIZATION_REPORT.md
@@ -91,15 +80,11 @@ PROJECT_FREEZE_MANIFEST_v1.0.md
 PUBLIC_REPOSITORY_CONTENTS.md
 SUBMISSION_PACKAGE_CHECKLIST.md
 ZENODO_RELEASE_CONTENTS.md
-HANDOFF.md
 covaltest.py
 AID_dowloed.py
 archive/
 zenodo/
-logs/
-outputs/tables/
-outputs/
-
-# Ultimate final version (data too large for git)
+PAD4_DB_FREEZE_v1.0/
+PAD4_DB_FREEZE_v2.0/
 PAD4_DB_FINAL/
 _archive/

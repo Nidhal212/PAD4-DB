@@ -129,6 +129,7 @@ for i, (n, mean_m) in enumerate(zip(mech_ns, mech_means)):
 
 ax_c.set_yticks(y_pos)
 ax_c.set_yticklabels(mech_labels, fontsize=6)
+ax_c.tick_params(axis='y', length=0)   # inward ticks collide with small-bar n= labels (e.g. Covalent, n=21)
 ax_c.set_xlabel('Compounds')
 ax_c.set_xlim(0, max(mech_ns) * 1.65)
 ax_c.invert_yaxis()

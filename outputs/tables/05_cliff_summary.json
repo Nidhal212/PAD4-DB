@@ -1,0 +1,38 @@
+{
+  "n_compounds_analyzed": 3093,
+  "n_fingerprints_computed": 3093,
+  "n_fingerprint_failures": 0,
+  "similarity_landscape": {
+    "n_pairs_sim_ge_06": 358416,
+    "n_pairs_sim_ge_07": 123460,
+    "n_pairs_sim_ge_08": 12071,
+    "n_pairs_sim_ge_09": 659,
+    "n_pairs_sim_ge_095": 233
+  },
+  "cliff_counts": {
+    "n_severe_cliffs_sim08_delta20": 94,
+    "n_moderate_cliffs_sim08_delta15": 193,
+    "n_broad_cliffs_sim08_delta10": 580,
+    "n_compounds_in_severe_cliffs": 99,
+    "n_compounds_in_any_cliff": 654,
+    "pct_compounds_in_severe_cliffs": 3.2,
+    "max_delta_pic50": 3.2277,
+    "mean_delta_pic50_severe": 2.308
+  },
+  "scaffold_analysis": {
+    "n_unique_scaffolds": 1244,
+    "n_singleton_scaffolds": 869,
+    "n_series_scaffolds": 375,
+    "largest_series_size": 174,
+    "scaffold_coverage": 0.3014,
+    "top_scaffold_n_compounds": 174
+  },
+  "patent_exclusive_contribution": {
+    "n_patent_exclusive_compounds": 233,
+    "severe_cliffs_all_compounds": 94,
+    "severe_cliffs_without_patent_exclusive": 93,
+    "severe_cliffs_added_by_patent": 1,
+    "pct_severe_cliffs_involving_patent_exclusive": 1.06,
+    "new_scaffolds_from_patent_exclusive": 103
+  }
+}

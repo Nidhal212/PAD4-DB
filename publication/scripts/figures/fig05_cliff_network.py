@@ -167,6 +167,13 @@ if HAS_NX:
     cbar.ax.tick_params(labelsize=5.5)
 
     # Hub labels
+    # shrinkB must clear the actual on-page marker footprint at the xy end:
+    # star tips (HUB_A_SZ=180) extend well beyond a circle of the same
+    # nominal size, and diamond corners (HUB_B_SZ=52) likewise extend past
+    # their inscribed circle — shrinkB=4 (prior fix) still left a visible
+    # leader-line stub crossing both marker borders. Use per-class values
+    # sized to each marker's true radius.
+    hub_shrinkB = {'A1': 15, 'A2': 15, 'B1': 9, 'B2': 9}
     for lbl, ik in HUB_IKS.items():
         if ik in pos:
             x, y = pos[ik]
@@ -176,7 +183,8 @@ if HAS_NX:
             xo, yo = offsets[lbl]
             ax_a.annotate(lbl, xy=(x, y), xytext=(x + xo, y + yo),
                           fontsize=6, fontweight='bold', color=color,
-                          arrowprops=dict(arrowstyle='-', lw=0.4, color=color))
+                          arrowprops=dict(arrowstyle='-', lw=0.4, color=color,
+                                           shrinkA=8, shrinkB=hub_shrinkB[lbl]))
 
     ax_a.set_title(f'{n} nodes · {G.number_of_edges()} severe cliff edges', fontsize=6, pad=4)
     n_nodes = n

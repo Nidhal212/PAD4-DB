@@ -129,7 +129,8 @@ for i, (data, (lo, hi)) in enumerate(zip(box_data, bins)):
     ax_b.hlines(med, i - 0.30, i + 0.30, color=C['black'], lw=1.4, zorder=4)
     cliff_rate = np.mean(data >= DELTA_CUT) * 100
     ax_b.text(i, DELTA_CUT + 0.12, f'{cliff_rate:.2f}%', ha='center', va='bottom',
-              fontsize=5.5, color=SEM['cliff'], fontweight='bold')
+              fontsize=5.5, color=SEM['cliff'], fontweight='bold', zorder=5,
+              bbox=dict(boxstyle='round,pad=0.15', fc='white', ec='none', alpha=0.8))
 
 ax_b.axhline(DELTA_CUT, color=SEM['cliff'], lw=0.8, ls='--', zorder=2)
 ax_b.text(len(bins) - 0.5, DELTA_CUT - 0.18, 'cliff threshold', fontsize=5.5,

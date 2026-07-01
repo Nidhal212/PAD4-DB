@@ -1,0 +1,4 @@
+dMW_category,n_cliffs,pct,mean_dpIC50,median_dpIC50,max_dpIC50
+A: <20 Da,52,55.3,2.275,2.197,2.924
+B: 20-50 Da,30,31.9,2.33,2.257,2.924
+C: >=50 Da,12,12.8,2.398,2.401,3.045

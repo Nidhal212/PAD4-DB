@@ -1,0 +1,5 @@
+Mechanism,n all compounds,% all compounds,n cliff compounds,% cliff compounds,Odds Ratio,Fisher's Exact p-value
+enzymatic,2079,67.2,68,68.7,1.072,0.828
+enzymatic_confirmed,878,28.4,31,31.3,1.156,0.499
+fp_ic50,115,3.7,0,0.0,0.0,0.051
+covalent,21,0.7,0,0.0,0.0,1.000

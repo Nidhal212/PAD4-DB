@@ -1,0 +1,2 @@
+n_total_compounds,n_patent_compounds,n_severe_cliff_compounds,n_patent_in_cliff,n_nonpatent_in_cliff,n_cliff_pairs_total,n_cliff_pairs_any_patent,pct_cliff_pairs_patent,odds_ratio,fishers_exact_p,phi_effect_size,note
+3093,233,99,1,98,94,1,1.1,0.1215,0.0060,0.0449,Exploratory; statistical power limited by small patent cliff cell count.

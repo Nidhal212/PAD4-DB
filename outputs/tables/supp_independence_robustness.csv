@@ -1,0 +1,3 @@
+analysis,spearman_rho_mean,spearman_rho_min,nonredundant_mean,nonredundant_min,nonredundant_max,original_nonredundant
+±20% weight perturbation (1000 draws),0.989,0.925,443,338,528,528
+alternative 1/n_sources scheme,0.981,0.981,338,,,528
