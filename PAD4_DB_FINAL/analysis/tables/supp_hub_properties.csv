@@ -1,0 +1,10 @@
+Property,Hub Mean (n=4),Non-hub Mean (n=95),p-value
+Molecular Weight,606.74,601.68,0.631
+Crippen cLogP,4.62,4.38,0.582
+TPSA (Å²),122.31,119.61,0.741
+H-bond donors,1.50,1.55,0.944
+H-bond acceptors,6.75,6.38,0.334
+Rotatable bonds,8.00,7.37,0.262
+Aromatic rings,4.50,4.51,0.944
+Fraction Csp3,0.46,0.44,0.383
+pIC50,4.83,6.74,0.007

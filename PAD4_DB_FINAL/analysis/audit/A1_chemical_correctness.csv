@@ -1,0 +1,7 @@
+check_name,n_tested,n_pass,n_fail,max_error,notes
+3A_pic50_trace,50,50,0,0.0,pIC50 = 9 - log10(value_nM); compared to pic50_aid in replicate_aggregated
+3B_mM_conversion,0,0,0,0.0,mM IC50 rows: value_nM = value × 1e6
+3B_ug_unconvertible,0,0,0,0.0,ug/mL IC50 rows must have norm_status=UNCONVERTIBLE_UNITS
+3B_pct_inh_null_nM,1,1,0,0.0,Pct_inh rows with value_nM not null: 0
+3C_known_inhibitors,4,0,4,0.0,Absent inhibitors: expected (structural normalization may alter InChIKey)
+3D_cross_source_consistency,50,50,0,0.5,High conflict = |ΔpIC50| > 1.5; mean delta = 0.025

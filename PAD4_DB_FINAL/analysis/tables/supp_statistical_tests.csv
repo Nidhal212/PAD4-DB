@@ -1,0 +1,9 @@
+test,statistic,value,p_value,effect_size,note
+Hub concentration (top-4 cliff-degree share),observed %,53.2,9.999000099990002e-05,3.9x enrichment,null 13.6±2.5%; 10000 label permutations
+Cliff rarity / diagonal absence (severe cliff count),observed n,94.0,9.999000099990002e-05,13.0x depletion,null 1225±100; pIC50 permuted on Tan>=0.8 subgraph
+Hub vs non-hub cliff pIC50 (Mann-Whitney),median diff,-2.4,0.00708883447878518,rank-biserial r=0.80,n=4 vs 95; large effect but low power on n=4
+Patent vs non-patent pIC50 (Mann-Whitney),median diff,-0.04,1.2895660172986842e-05,rank-biserial r=0.17,medians near-identical; difference is in low-potency tail (means 6.13 vs 6.53)
+Potency consistency across sources (Kruskal-Wallis),H,0.25,0.8807409102318331,,"medians PubChem 6.85, ChEMBL 6.90, BindingDB 6.85; NOT significant -> consistent"
+pIC50 vs molecular weight (Spearman),rho,0.535,5.5497981195117924e-229,rho=0.535,"moderate positive size-potency trend; known QSAR confound, reported as annotation"
+Scaffold series size vs SAR ruggedness sigma (Spearman),rho,0.361,5.474409067137311e-13,rho=0.361,larger series are significantly more rugged -> supports scaffold-dependent SAR ruggedness
+Cross-source pIC50 spread (descriptive; NOT a measurement-noise estimate),max spread,0.739,,,"cross-source agreement reflects re-curation, not independent replication; not used to argue cliffs exceed measurement error (see Methods)"

@@ -1,0 +1,6 @@
+metric,value,pct_of_94
+severe cliff pairs,94.0,100.0
+pairs with a common assay (AID),93.0,98.9
+pairs confirmed severe within a common assay,93.0,98.9
+"of pairs with a common assay, % still severe",100.0,
+pairs sharing >=1 assay family,94.0,100.0

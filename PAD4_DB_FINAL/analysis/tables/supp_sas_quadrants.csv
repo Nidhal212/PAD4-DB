@@ -1,0 +1,5 @@
+SAS quadrant,N pairs,% of related pairs
+"Activity cliffs (high sim, high Δ)",94,0.026
+"Smooth/continuous SAR (high sim, low Δ)",11977,3.342
+"Discontinuous (low sim, high Δ)",2051,0.572
+"Non-descript (low sim, low Δ)",344294,96.06

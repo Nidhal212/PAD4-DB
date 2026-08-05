@@ -1,0 +1,151 @@
+========================================================================
+PAD4-DB v2 — Raw Data Inventory & QC Report
+========================================================================
+
+📁 Files on disk: 97 across 95 unique AIDs
+
+── Duplicate AID location check ──────────────────────────────────────
+  ℹ  AID  1920046 — dual-layer (expected): ['confirmatory', 'secondary']
+  ℹ  AID  2202442 — dual-layer (expected): ['confirmatory', 'secondary']
+  ✅ No unexpected duplicates
+
+── Per-AID file checks ───────────────────────────────────────────────
+  ✅ AID   463073  [HTS     ]    2000 rows  
+  ✅ AID   485272  [HTS     ]  326134 rows  
+  ✅ AID   488796  [HTS     ]    1182 rows  
+  ✅ AID   492970  [A       ]      10 rows  
+  ✅ AID   320707  [A       ]       3 rows  
+  ✅ AID  1804546  [A       ]      26 rows  
+  ✅ AID  1804627  [A       ]      42 rows  
+  ✅ AID  1805620  [A       ]     134 rows  
+  ✅ AID  1806182  [A       ]     136 rows  
+  ✅ AID  1806183  [A       ]      56 rows  
+  ✅ AID  1806764  [A       ]      85 rows  
+  ✅ AID  1919095  [A       ]    1097 rows  
+  ✅ AID  1920200  [A       ]     328 rows  
+  ✅ AID  1963715  [A       ]      49 rows  
+  ✅ AID  2202576  [A       ]      75 rows    [VERIFIED_OVERLAP]
+              → RFMS1 (75 SIDs) vs RFMS2 2202577 (231 SIDs): 55 SID overlap (23.8%). Keep both AIDs. During dedup: for 55 overlapping SIDs prefer 2202577 (RFMS2).
+  ✅ AID  2202577  [A       ]     231 rows    [VERIFIED_OVERLAP]
+              → RFMS2 (231 SIDs): preferred source for 55 SIDs shared with 2202576 (RFMS1).
+  ✅ AID  2202596  [A       ]     615 rows    [VERIFIED_DISTINCT]
+              → 614 SIDs, 0 overlap with 2202597 — completely distinct compound sets. No dedup needed.
+  ✅ AID  2202597  [A       ]      18 rows    [VERIFIED_DISTINCT]
+              → 18 SIDs, 0 overlap with 2202596 — completely distinct compound sets. No dedup needed.
+  ✅ AID  2202717  [A       ]      53 rows  
+  ✅ AID  2202442  [A       ]      23 rows    [DUAL_LAYER_D]
+  ✅ AID  1330527  [A       ]       6 rows  
+  ✅ AID  1471656  [A       ]       9 rows  
+  ✅ AID  1474465  [A       ]       5 rows  
+  ✅ AID  1474486  [A       ]       9 rows  
+  ✅ AID  1511938  [A       ]       1 rows  
+  ✅ AID  1632998  [A       ]       8 rows  
+  ✅ AID  1651501  [A       ]       1 rows  
+  ✅ AID  1651502  [A       ]       1 rows  
+  ✅ AID  1813082  [A       ]       2 rows  
+  ✅ AID  1813806  [A       ]       6 rows  
+  ✅ AID  1875531  [A       ]       6 rows  
+  ✅ AID  1920046  [A       ]      23 rows    [DUAL_LAYER_D]
+  ✅ AID  1973686  [A       ]       2 rows  
+  ✅ AID  1993481  [A       ]       6 rows  
+  ✅ AID  2006936  [A       ]       6 rows  
+  ✅ AID  2034405  [A       ]       2 rows  
+  ✅ AID  2034406  [A       ]       2 rows  
+  ✅ AID  2034407  [A       ]       1 rows  
+  ✅ AID  2071731  [A       ]      42 rows  
+  ✅ AID  2134413  [A       ]       9 rows  
+  ✅ AID  2200614  [A       ]       1 rows  
+  ✅ AID  1422897  [A       ]       5 rows  
+  ✅ AID   725673  [A       ]       1 rows  
+  ✅ AID   725596  [A       ]      13 rows    [VERIFIED_DOSE_RESPONSE]
+              → Confirmed dose-response. '10µM' in AID description = enzyme preincubation conc, not compound conc.
+  ✅ AID   725597  [A       ]      13 rows    [VERIFIED_DOSE_RESPONSE]
+              → Confirmed dose-response. '1µM' in AID description = enzyme preincubation conc, not compound conc.
+  ✅ AID   725598  [A       ]       8 rows  
+  ✅ AID  1196525  [A       ]       8 rows  
+  ✅ AID  1069613  [A       ]       2 rows  
+  ✅ AID  1069619  [A       ]       6 rows  
+  ✅ AID  1069623  [A       ]      32 rows  
+  ✅ AID   627371  [A       ]      22 rows  
+  ✅ AID   627428  [A       ]       4 rows  
+  ✅ AID   627432  [A       ]       4 rows  
+  ✅ AID   626724  [A       ]       2 rows  
+  ✅ AID   626728  [A       ]       2 rows  
+  ✅ AID  1069614  [A       ]       1 rows  
+  ✅ AID  1069618  [A       ]       5 rows  
+  ✅ AID   588488  [A       ]     136 rows  
+  ✅ AID   588559  [A       ]      30 rows  
+  ✅ AID   588560  [A       ]     102 rows  
+  ✅ AID   626735  [C       ]       1 rows  
+  ✅ AID   626738  [C       ]       1 rows  
+  ✅ AID   712876  [C       ]      11 rows  
+  ✅ AID   725671  [C       ]       4 rows  
+  ✅ AID  1069608  [C       ]       5 rows  
+  ✅ AID  1196521  [C       ]       1 rows  
+  ✅ AID  1364668  [C       ]       4 rows  
+  ✅ AID  1422898  [C       ]       8 rows  
+  ✅ AID  1422904  [C       ]       1 rows  
+  ✅ AID  2076402  [C       ]       1 rows  
+  ✅ AID   651867  [C       ]       1 rows  
+  ✅ AID  2041348  [D       ]       1 rows  
+  ✅ AID  2041349  [D       ]       1 rows  
+  ✅ AID  2053867  [D       ]       1 rows  
+  ✅ AID  2053915  [D       ]       1 rows  
+  ✅ AID  2053917  [D       ]       1 rows  
+  ✅ AID  2193457  [D       ]       1 rows  
+  ✅ AID  1625405  [D       ]       1 rows  
+  ✅ AID  1806765  [D       ]      29 rows  
+  ✅ AID  1920046  [D       ]      23 rows    [DUAL_LAYER_A]
+  ✅ AID  2202442  [D       ]      23 rows    [DUAL_LAYER_A]
+  ✅ AID  1069597  [D       ]       3 rows  
+  ✅ AID  1069598  [D       ]       3 rows  
+  ✅ AID  1069599  [D       ]       3 rows  
+  ✅ AID  1069600  [D       ]       3 rows  
+  ✅ AID  1069601  [D       ]       3 rows  
+  ✅ AID  1069604  [D       ]       3 rows  
+  ✅ AID  1069605  [D       ]       1 rows  
+  ✅ AID  1069606  [D       ]       3 rows  
+  ✅ AID   588487  [D       ]     316 rows  
+  ✅ AID   651627  [D       ]       6 rows  
+  ✅ AID  1346144  [D       ]       3 rows    [CHECK_UNITS]
+              → ChEMBL affinity aggregator — mixed Ki/Kd units. Curate Standard Units carefully during normalization.
+  ✅ AID  2039667  [E       ]       1 rows  
+  ✅ AID  2053916  [E       ]       1 rows  
+  ✅ AID   627442  [E       ]       2 rows  
+  ✅ AID   627443  [E       ]       2 rows  
+  ✅ AID  1422917  [E       ]       2 rows  
+
+── Orphan check (on disk, not in registry) ──────────────────────────
+  ✅ No orphan files
+
+── Excluded AID disk check ───────────────────────────────────────────
+  ✅ No excluded AIDs on disk
+
+── External sources ──────────────────────────────────────────────────
+  ✅ ChEMBL       CHEMBL6111_Protein-arginine deiminase type_4.csv      4925 rows  48 columns  Semicolon-delimited (not comma). All 48 columns present.
+  ✅ BindingDB    bindingdb_Q9UM07.tsv                                  3087 rows  640 columns  UniProt col present at position 21+ (beyond first 20 shown in preview). All key activity and SMILES columns confirmed present.
+
+========================================================================
+SUMMARY
+========================================================================
+  PubChem AIDs checked : 97
+  ✅ PASS              : 97
+  ⚠  WARN              : 0
+  ❌ FAIL              : 0
+  🚫 Excluded AIDs     : 9 (not downloaded by design)
+
+  External sources:
+    ✅ ChEMBL: PASS (4925 rows)
+    ✅ BindingDB: PASS (3087 rows)
+
+  Verified decisions (locked):
+    AID 2202576/77  RFMS1 vs RFMS2: 55 SID overlap → keep both, prefer 2202577 for overlapping SIDs
+    AID 2202596/97  Functional 1/2: 0 SID overlap → fully distinct, no dedup needed
+    AID 725596/97   Endpoint confirmed dose-response IC50 (µM in description = enzyme conc)
+    AID 1346144     Mixed Ki/Kd units → curate Standard Units during normalization
+    AID 1920046/2202442  Dual-layer → split by endpoint type during normalization
+
+  ✅ ALL CHECKS PASSED — ready for standardization
+
+  Reports: outputs/tables/00_raw_inventory_report.csv
+           outputs/tables/00_raw_inventory_summary.txt

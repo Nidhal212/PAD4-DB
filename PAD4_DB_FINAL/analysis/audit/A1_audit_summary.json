@@ -1,0 +1,78 @@
+{
+  "target_audit": {
+    "n_aids_total": 97,
+    "n_PAD4_EXPLICIT": 93,
+    "n_PAD_FAMILY": 2,
+    "n_AMBIGUOUS": 2,
+    "n_NON_PAD4": 0,
+    "potency_rows_from_non_explicit": 0,
+    "potency_rows_from_non_explicit_pct": 0.0
+  },
+  "species_audit": {
+    "chembl_non_human_rows": 0,
+    "bindingdb_non_human_rows": 0,
+    "pubchem_all_recombinant_human": true,
+    "compounds_with_any_non_human": 0,
+    "compounds_all_human": 3093
+  },
+  "chemical_audit": {
+    "pic50_trace_max_diff": 0.0,
+    "pic50_trace_pass": true,
+    "unit_mM_rows_correct": 0,
+    "unit_ugml_rows_unconvertible": 0,
+    "pct_inh_value_nM_null_correct": true,
+    "known_inhibitors_found": 0,
+    "known_inhibitors_checked": 4,
+    "known_inhibitors_detail": [
+      {
+        "name": "BB-Cl-amidine",
+        "inchi_key": "QAOBBWGYGUBGNG-UEXGJGTCSA-N",
+        "found": false,
+        "pic50_in_db": null,
+        "expected_pic50": 7.0,
+        "delta": null,
+        "status": "NOT_FOUND"
+      },
+      {
+        "name": "GSK484",
+        "inchi_key": "KVCGISUBCHHTDD-UHFFFAOYSA-N",
+        "found": false,
+        "pic50_in_db": null,
+        "expected_pic50": 7.5,
+        "delta": null,
+        "status": "NOT_FOUND"
+      },
+      {
+        "name": "o-F-amidine",
+        "inchi_key": "VEXZGXHMUGYJMC-UHFFFAOYSA-N",
+        "found": false,
+        "pic50_in_db": null,
+        "expected_pic50": 6.5,
+        "delta": null,
+        "status": "NOT_FOUND"
+      },
+      {
+        "name": "Streptonigrin",
+        "inchi_key": "FIAFUQMPZJWCLV-UHFFFAOYSA-N",
+        "found": false,
+        "pic50_in_db": null,
+        "expected_pic50": 5.0,
+        "delta": null,
+        "status": "NOT_FOUND"
+      }
+    ],
+    "cross_source_high_conflict_n": 0,
+    "cross_source_mean_delta": 0.025,
+    "cross_source_max_delta": 0.5,
+    "cross_source_distribution": {
+      "< 0.5": 48,
+      "0.5\u20131.0": 2,
+      "1.0\u20131.5": 0,
+      ">= 1.5": 0
+    }
+  },
+  "overall_assessment": {
+    "estimated_pad4_sar_purity_pct": 100.0,
+    "ready_for_step05": true
+  }
+}

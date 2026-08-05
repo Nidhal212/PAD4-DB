@@ -1,0 +1,4 @@
+delta_threshold,tanimoto_threshold,n_cliff_pairs,n_compounds,top4_hub_share_pct,top4_are_canonical_hubs,null_top4_share_pct,hub_enrichment_fold,perm_p
+1.5,0.8,287,260,38.0,2/4,9.9,3.9,0.0004997501249375312
+2.0,0.8,94,99,53.2,4/4,13.7,3.9,0.0004997501249375312
+2.5,0.8,21,23,85.7,2/4,21.7,3.9,0.0004997501249375312

@@ -1,0 +1,9 @@
+{
+  "title": "PAD4-DB: A curated database and activity landscape analysis of PAD4 inhibitors",
+  "description": "Final processed dataset and fully reproducible Snakemake pipeline for the PAD4 inhibitor manuscript.",
+  "creators": [
+    {"name": "Your Last Name, Your First Name"}
+  ],
+  "license": "MIT",
+  "access_right": "open"
+}

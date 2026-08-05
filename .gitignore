@@ -26,7 +26,11 @@ data/raw/
 data/interim/
 data/processed_repro/
 data/interim_repro/
-
+# ── Explicit exclude for PAD4_DB_FINAL subfolders ────────────
+PAD4_DB_FINAL/raw_data/
+PAD4_DB_FINAL/manuscript/
+PAD4_DB_FINAL/data/interim/
+PAD4_DB_FINAL/CLAUDE.md
 # ── Processed dataset — INCLUDED in repo (small enough; main contribution) ───
 # data/processed/ is tracked — see data/processed/*.parquet
 
@@ -86,7 +90,6 @@ archive/
 zenodo/
 PAD4_DB_FREEZE_v1.0/
 PAD4_DB_FREEZE_v2.0/
-PAD4_DB_FINAL/
 _archive/
 
 # ---- Publication temporary files ----

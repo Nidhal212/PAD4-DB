@@ -1,0 +1,14 @@
+PAD4-DB v2 — Data Download Dates
+Generated: 2026-06-18T17:28:51.385608
+
+Earliest source file mtime: 1980-01-01
+Latest source file mtime:   2026-06-14
+
+File-by-file timestamps:
+  AID_1069613_datatable_all.csv: 2026-06-14
+  AID_1069614_datatable_all.csv: 2026-06-14
+  AID_1069618_datatable_all.csv: 2026-06-14
+  AID_1069619_datatable_all.csv: 2026-06-14
+  AID_1069623_datatable_all.csv: 2026-06-14
+  CHEMBL6111_Protein-arginine deiminase type_4.csv: 1980-01-01
+  bindingdb_Q9UM07.tsv: 2026-06-10

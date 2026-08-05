@@ -1,0 +1,98 @@
+PAD4-DB v2 — A1 Biological & Chemical Audit
+============================================================
+pad4_compounds:           3,093 rows
+dedup_aid_level:          7,214 rows
+normalized_activities:    341,282 rows
+replicate_aggregated:     339,687 rows
+AID registry:             97 entries
+
+════════════════════════════════════════════════════════════
+AUDIT 1 — TARGET IDENTITY
+════════════════════════════════════════════════════════════
+  Total AIDs in registry:  97
+  PAD4_EXPLICIT: 93
+  PAD_FAMILY: 2
+  AMBIGUOUS: 2
+
+  Potency-space rows from non-PAD4_EXPLICIT AIDs: 0 / 7264 (0.00%)
+  PASS — all potency-space rows come from PAD4_EXPLICIT AIDs
+
+  Non-explicit AIDs (4 total):
+   aid               source layer target_class  n_rows_potency_space
+588488 pubchem_confirmatory     A   PAD_FAMILY                     0
+588560 pubchem_confirmatory     A   PAD_FAMILY                     0
+588487    pubchem_secondary     D    AMBIGUOUS                     0
+651627    pubchem_secondary     D    AMBIGUOUS                     0
+
+════════════════════════════════════════════════════════════
+AUDIT 2 — SPECIES VALIDITY
+════════════════════════════════════════════════════════════
+
+  ChEMBL organism distribution:
+    homo_sapiens: 4858
+    unknown: 67
+  ChEMBL non-human rows: 0
+
+  BindingDB organism distribution:
+    homo_sapiens: 3087
+  BindingDB non-human rows: 0
+
+  PubChem: all assays use recombinant human PAD4
+    (biochemical assays confirmed: recombinant_human for all AIDs)
+    pubchem_all_recombinant_human: True
+
+  Cross-source species summary:
+    ChEMBL non-human rows:  0
+    BindingDB non-human rows: 0
+    Compounds with any non-human data: 0
+    Compounds with all-human data:     3093
+
+════════════════════════════════════════════════════════════
+AUDIT 3 — CHEMICAL CORRECTNESS
+════════════════════════════════════════════════════════════
+
+  3A — Random pIC50 trace (50 compounds)
+    Sampled rows:          50 (from 6,907 single-replicate IC50 groups)
+    Max absolute diff:     0.00000000
+    Mean absolute diff:    0.00000000
+    PASS — max diff < 0.001
+
+  3B — Unit conversion sanity
+    (i)  mM IC50 rows: 0 found (no mM IC50 rows in dataset)
+    (ii) ug/mL IC50 rows: 0 found, 0 UNCONVERTIBLE_UNITS
+    (iii) Pct_inh rows with value_nM not null: 0 (expected 0) → PASS
+
+  3C — Known PAD4 inhibitor controls
+    [✗] BB-Cl-amidine: NOT_FOUND
+  InChIKey=QAOBBWGYGUBGNG-UEXGJGTCSA-N  — may be absent after RDKit standardization
+        WARNING: not found in pad4_compounds
+    [✗] GSK484: NOT_FOUND
+  InChIKey=KVCGISUBCHHTDD-UHFFFAOYSA-N  — may be absent after RDKit standardization
+        WARNING: not found in pad4_compounds
+    [✗] o-F-amidine: NOT_FOUND
+  InChIKey=VEXZGXHMUGYJMC-UHFFFAOYSA-N  — may be absent after RDKit standardization
+        WARNING: not found in pad4_compounds
+    [✗] Streptonigrin: NOT_FOUND
+  InChIKey=FIAFUQMPZJWCLV-UHFFFAOYSA-N  — may be absent after RDKit standardization
+        WARNING: not found in pad4_compounds
+
+    Known inhibitors found: 0 / 4
+
+  3D — Cross-source pIC50 consistency (top 50 multi-source)
+    Top-50 n_sources distribution: {3: 50}
+    max |ΔpIC50| across sources:  max=0.500  mean=0.025
+    High-conflict (|ΔpIC50|>1.5): 0 / 50
+    PASS — no compound has cross-source spread > 1.5 pIC50 units
+    Spread distribution: {'< 0.5': 48, '0.5–1.0': 2, '1.0–1.5': 0, '>= 1.5': 0}
+
+════════════════════════════════════════════════════════════
+OVERALL ASSESSMENT
+════════════════════════════════════════════════════════════
+  Estimated PAD4 SAR purity: 100.0%
+  Ready for Step 05:         YES
+
+────────────────────────────────────────────────────────────
+Written → outputs/audit/A1_aid_audit.csv
+Written → outputs/audit/A1_compound_bio_audit.csv
+Written → outputs/audit/A1_chemical_correctness.csv
+Written → outputs/audit/A1_audit_summary.json
