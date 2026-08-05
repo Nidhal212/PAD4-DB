@@ -1,0 +1,153 @@
+AUDIT PASSED — 86/86 checks
+
+METRIC                                        CLAIMED                   ACTUAL                         STATUS
+--------------------------------------------------------------------------------------------------------------
+1A. Row count                                 3093                      3093                           PASS
+1B. Column count                              25                        25                             PASS
+1C. Duplicate inchi_key                       0                         0                              PASS
+1D. Null inchi_key                            0                         0                              PASS
+1E. Null smiles_std                           0                         0                              PASS
+1F. RDKit SMILES parse failures               0 (flag if >0)            0                              PASS
+1G. InChIKey format malformed                 0                         0                              PASS
+1H. pIC50 range [2.00, 8.52]                  [2.00, 8.52]              [2.0000, 8.5229]               PASS
+1I. pIC50 mean 6.550 ±0.005                   6.55                      6.55                           PASS
+1J. pIC50 median 6.845 ±0.005                 6.845                     6.8447                         PASS
+1K. pIC50 std 0.992 ±0.005                    0.992                     0.9918                         PASS
+1L. MW=0 or null                              0                         0                              PASS
+1M. is_covalent dtype                         bool                      bool                           PASS
+1M. is_covalent True count                    107                       107                            PASS
+1M. warhead_class notna matches is_covalent   107                       107                            PASS
+1M. mechanism_class 4 unique, 0 nulls         4 unique, 0 nulls         4 unique, 0 nulls              PASS
+1M. fragment_flag True count                  5                         5                              PASS
+1N. use_in_potency_model all True             3093                      3093                           PASS
+2. pubchem_confirmatory                       233                       233                            PASS
+2. bindingdb                                  95                        95                             PASS
+2. chembl                                     10                        10                             PASS
+2. bindingdb|pubchem_confirmatory             1199                      1199                           PASS
+2. bindingdb|chembl                           167                       167                            PASS
+2. chembl|pubchem_confirmatory                23                        23                             PASS
+2. bindingdb|chembl|pubchem_confirmatory      1366                      1366                           PASS
+2. TOTAL                                      3093                      3093                           PASS
+3A. HTS row count                             327336                    327336                         PASS
+3B. HTS duplicate inchi_key                   0                         0                              PASS
+3C. SAR∩HTS overlap                           1453                      1453                           PASS
+3D. SAR∪HTS union                             328976                    328976                         PASS
+4A. Total cliff pairs                         867                       867                            PASS
+4B. Severe pairs                              94                        94                             PASS
+4B. Moderate pairs                            193                       193                            PASS
+4B. Broad pairs                               580                       580                            PASS
+4C. Tanimoto recomputation max error          <0.002                    0.000000                       PASS
+4D. delta_pic50 recomputation max error       <0.001                    0.00000000                     PASS
+4E. Max delta_pic50 severe                    3.045 ±0.001              3.044793                       PASS
+4F. Severe cliff unique compounds             99                        99                             PASS
+4G. Hub degree SMADULGDNOCLOP                 15                        15                             PASS
+4G. Hub degree RAVBZQAQTVGKIV                 12                        12                             PASS
+4G. Hub degree UDCDEKJNAMHBFH                 12                        12                             PASS
+4G. Hub degree DVCKJOQIVOGXEI                 11                        11                             PASS
+4H. Collective hub pairs                      50                        50                             PASS
+4I. Cross-mechanism severe pairs              4                         4                              PASS
+4J. Covalent-reversible severe pairs          0                         0                              PASS
+5A. Total pairs                               358416                    358416                         PASS
+5B. NaN SALI count                            198                       198                            PASS
+5C. SALI max 65.88 ±0.01                      65.88                     65.88                          PASS
+5D. Pairs sim>=0.8                            12071                     12071                          PASS
+5E. Pairs SALI>10                             335                       335                            PASS
+5F. Pairs SALI>20                             19                        19                             PASS
+5G. SALI recomputation max error (1000 sample) <0.001                    0.00000000                     PASS
+6A. Total unique scaffolds                    1244                      1244                           PASS
+6B. Series scaffolds (>=2)                    375                       375                            PASS
+6C. Singleton scaffolds                       869                       869                            PASS
+6D. Largest series                            174                       174                            PASS
+6E. Series coverage 71.8% ±0.5%               71.8% ±0.5%               71.9%                          PASS
+  *** NOTE: 6F. Patent-exclusive scaffolds (pipeline): 103 (locked). Fresh re-derivation gives 81 due to RDKit canonicalization drift.
+7A. MMP pairs total                           707                       707                            PASS
+7B. MMP-confirmed severe cliffs               85                        85                             PASS
+7C. MMP validation rate                       90.4%                     90.4%                          PASS
+7D. MMP type single_atom_change               49                        49                             PASS
+7D. MMP type small_substituent                28                        28                             PASS
+7D. MMP type medium_substituent               8                         8                              PASS
+7E. Discontinuity scores rows                 99                        99                             PASS
+7F. Top discontinuity compound                IUZXRGLRAITQQP*           IUZXRGLRAITQQP                 PASS
+7F. Top discontinuity score                   2.471 ±0.001              2.471                          PASS
+8. Figure 1: Pipeline Workflow                >50KB                     263.5 KB                       PASS
+8. Figure 2: Source Overlap UpSet             >50KB                     155.3 KB                       PASS
+8. Figure 3: t-SNE Chemical Space             >50KB                     1648.8 KB                      PASS
+8. Figure 4: pIC50 Distribution               >50KB                     514.0 KB                       PASS
+8. Figure 5: Scaffold Landscape               >50KB                     577.9 KB                       PASS
+8. Figure 6: Similarity Landscape             >50KB                     580.2 KB                       PASS
+8. Figure 7: Activity Cliff Network           >50KB                     1193.4 KB                      PASS
+8. Figure 8: MMP Analysis                     >50KB                     326.9 KB                       PASS
+8. Figure 9: SALI Analysis                    >50KB                     650.2 KB                       PASS
+8. Figure 10: Patent Scaffolds                >50KB                     614.5 KB                       PASS
+8. Figure 11: Independence Scores             >50KB                     251.6 KB                       PASS
+9. fig3_tsne_summary.html                     exists                    9.9 KB                         PASS
+9. fig4_distribution_stats.html               exists                    10.1 KB                        PASS
+9. fig5_scaffold_stats.html                   exists                    16.6 KB                        PASS
+9. fig6_sali_stats.html                       exists                    10.3 KB                        PASS
+9. fig7_cliff_stats.html                      exists                    11.6 KB                        PASS
+9. fig8_mmp_stats.html                        exists                    8.7 KB                         PASS
+9. fig9_sali_top_pairs.html                   exists                    15.3 KB                        PASS
+9. fig10_patent_stats.html                    exists                    9.5 KB                         PASS
+9. fig11_independence_stats.html              exists                    11.0 KB                        PASS
+
+==============================================================================================================
+MASTER VERIFICATION TABLE
+==============================================================================================================
+METRIC                                        CLAIMED              ACTUAL               STATUS
+--------------------------------------------------------------------------------------------------------------
+Total SAR compounds                           3,093                3,093                PASS
+Total HTS compounds                           327,336              327,336              PASS
+SAR∩HTS overlap                               1,453                1,453                PASS
+Total unique InChIKeys                        328,976              328,976              PASS
+pIC50 min                                     2.00                 2.000                PASS
+pIC50 max                                     8.52                 8.523                PASS
+pIC50 mean                                    6.550                6.550                PASS
+pIC50 median                                  6.845                6.845                PASS
+pIC50 std                                     0.992                0.992                PASS
+Source combos — PubChem only                  233                  233                  PASS
+Source combos — BindingDB only                95                   95                   PASS
+Source combos — ChEMBL only                   10                   10                   PASS
+Source combos — BD|PC                         1,199                1,199                PASS
+Source combos — BD|ChEMBL                     167                  167                  PASS
+Source combos — ChEMBL|PC                     23                   23                   PASS
+Source combos — all three                     1,366                1,366                PASS
+is_true_multi_source True                     528                  528                  PASS
+is_true_multi_source False                    2,565                2,565                PASS
+is_covalent True                              107                  107                  PASS
+fragment_flag True                            5                    5                    PASS
+mechanism_class enzymatic                     2,079                2,079                PASS
+mechanism_class confirmed                     878                  878                  PASS
+mechanism_class fp_ic50                       115                  115                  PASS
+mechanism_class covalent                      21                   21                   PASS
+Unique scaffolds                              1,244                1,244                PASS
+Series scaffolds                              375                  375                  PASS
+Singleton scaffolds                           869                  869                  PASS
+Largest series                                174                  174                  PASS
+Scaffold coverage                             71.8%                71.9%                PASS
+Gini coefficient                              0.532                0.532                PASS
+Patent-exclusive compounds                    233                  233                  PASS
+Patent-exclusive scaffolds                    103                  103 (pipeline locked; fresh=81) PASS
+Total cliff pairs                             867                  867                  PASS
+Severe cliff pairs                            94                   94                   PASS
+Moderate cliff pairs                          193                  193                  PASS
+Broad cliff pairs                             580                  580                  PASS
+Severe cliff compounds                        99                   99                   PASS
+Max delta_pic50                               3.045                3.0448               PASS
+Pairs sim>=0.6                                358,416              358,416              PASS
+Pairs sim>=0.8                                12,071               12,071               PASS
+SALI NaN count                                198                  198                  PASS
+SALI max                                      65.88                65.88                PASS
+SALI>10 count                                 335                  335                  PASS
+SALI>20 count                                 19                   19                   PASS
+Hub SMADULGDNOCLOP pairs                      15                   15                   PASS
+Hub RAVBZQAQTVGKIV pairs                      12                   12                   PASS
+Hub UDCDEKJNAMHBFH pairs                      12                   12                   PASS
+Hub DVCKJOQIVOGXEI pairs                      11                   11                   PASS
+Collective hub pairs                          50                   50                   PASS
+Hub % of severe cliffs                        53.2%                53.2%                PASS
+Cross-mechanism severe pairs                  4                    4                    PASS
+Covalent-reversible severe pairs              0                    0                    PASS
+MMP pairs (99 compounds)                      707                  707                  PASS
+MMP-confirmed severe cliffs                   85                   85                   PASS
+MMP validation rate                           90.4%                90.4%                PASS
+Active AIDs                                   95                   95 (Step 00 locked)  PASS

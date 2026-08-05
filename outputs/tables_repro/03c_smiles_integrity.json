@@ -1,0 +1,7 @@
+{
+  "smiles_null_count": 0,
+  "smiles_to_multiple_inchikeys": 0,
+  "inchikey_to_multiple_smiles": 0,
+  "top10_smiles_conflicts": [],
+  "top10_inchikey_conflicts": []
+}

@@ -1,0 +1,4 @@
+dMW category,count,pct,mean |dpIC50|,median |dpIC50|,max |dpIC50|
+A: <20 Da,52,55.3,2.27,2.2,2.92
+B: 20-50 Da,30,31.9,2.33,2.26,2.92
+C: >=50 Da,12,12.8,2.4,2.4,3.04

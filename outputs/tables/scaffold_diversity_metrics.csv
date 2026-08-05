@@ -1,0 +1,11 @@
+metric,value
+n_compounds,3093.0
+n_unique_scaffolds,1244.0
+scaffold_to_compound_ratio,0.4022
+singleton_scaffold_fraction,0.6986
+n_series_ge2,375.0
+top10_scaffold_coverage_pct,19.88
+gini_coefficient,0.532
+shannon_entropy,6.2546
+normalized_shannon_evenness,0.8777
+compounds_in_series_pct,71.9

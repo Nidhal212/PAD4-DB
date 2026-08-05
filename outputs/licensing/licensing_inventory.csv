@@ -1,0 +1,23 @@
+filename,source_provenance,contains_raw_source_records,contains_transformed_source_records,contains_only_derived_statistics,notes
+standardized_structures.sdf,"PubChem (public domain) + ChEMBL (CC-BY-SA 4.0) + BindingDB (CC-BY 4.0)",no,yes,no,"3093 RDKit-standardized structures; 2D coords RDKit-generated; SD tags (pIC50 murcko_scaffold source_independence_score hub_class) are all pipeline-computed; no source IDs retained. Structures trace to source DB records but have been transformed."
+activity_cliffs.csv,"Derived from standardized_structures.sdf",no,no,yes,"InChIKey pairs (computed identifiers) + Tanimoto (computed by ECFP4) + pIC50 (pipeline-derived) + cliff_tier (derived threshold logic). No SMILES no source IDs. Pure derived output."
+source_independence_scores.csv,"Derived from pipeline deduplication step",no,no,yes,"InChIKey (computed) + source_list (provenance string e.g. 'bindingdb|chembl|pubchem_confirmatory') + computed scores. Source names mentioned for provenance; no raw records."
+cliff_hubs.csv,"PubChem + BindingDB (4 compounds)",no,yes,no,"Contains smiles_std and murcko_smiles for 4 hub compounds. SMILES are RDKit-standardized (not raw). Small subset (4 records) selected by analysis."
+scaffold_ruggedness_table.csv,"Derived from standardized_structures.sdf",no,no,yes,"Murcko scaffold SMILES (computed by RDKit) + series statistics. No source IDs no raw SMILES."
+transformation_impact_table.csv,"Derived from MMP analysis",no,no,yes,"Aggregated statistics by MMP transformation category. No structures no source IDs."
+hub_physchem_table.csv,"Derived from standardized_structures.sdf",no,no,yes,"Physicochemical statistics (Mann-Whitney U FDR). No structures no source IDs."
+hub_neighborhood_metrics.csv,"Derived from standardized_structures.sdf",no,no,yes,"4 hub compounds by InChIKey + computed neighborhood metrics. No SMILES no source IDs."
+null_model_comparison.csv,"Derived from permutation analysis",no,no,yes,"3 rows of aggregated permutation test statistics. No structures no source IDs."
+supp_independence_robustness.csv,"Derived from source_independence_scores.csv",no,no,yes,"Robustness statistics for independence scoring. No structures."
+supp_threshold_sensitivity.csv,"Derived from activity_cliffs.csv",no,no,yes,"Cliff counts at varied thresholds. No structures."
+analysis/audit_scaffold_ruggedness.py,Original code (no source data embedded),no,no,no,Python script — original work
+analysis/audit_constrained_permutation.py,Original code (no source data embedded),no,no,no,Python script — original work
+analysis/audit_hub_characterization.py,Original code (no source data embedded),no,no,no,Python script — original work
+analysis/audit_mmp_typology.py,Original code (no source data embedded),no,no,no,Python script — original work
+analysis/audit_source_and_qc.py,Original code (no source data embedded),no,no,no,Python script — original work
+analysis/audit_export_package.py,Original code (no source data embedded),no,no,no,Python script — original work
+analysis/audit_hardening_sensitivity.py,Original code (no source data embedded),no,no,no,Python script — original work
+environment.yml,Original (package list from conda),no,no,no,Lists software dependencies — no source data
+README_zenodo.md,Original documentation,no,no,no,Written by authors — no source records
+README_data.md,Original documentation,no,no,no,Written by authors — no source records
+README_code.md,Original documentation,no,no,no,Written by authors — no source records

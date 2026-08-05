@@ -88,3 +88,12 @@ PAD4_DB_FREEZE_v1.0/
 PAD4_DB_FREEZE_v2.0/
 PAD4_DB_FINAL/
 _archive/
+
+# ---- Publication temporary files ----
+*_dryrun.parquet
+*_pre_columns_*.parquet
+*_pre_remediation_*.parquet
+*debug*
+
+__pycache__/
+*.pyc

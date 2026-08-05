@@ -1,0 +1,660 @@
+
+======================================================================
+  0. ENVIRONMENT
+======================================================================
+Python:      3.10.19
+Root:        /home/nidhal/PAD4-db_V2
+Run date:    2026-06-16 01:35
+RDKit:       2025.09.5
+scikit-learn: 1.7.2
+
+======================================================================
+  1. MASTER PARQUET — pad4_compounds.parquet
+======================================================================
+Rows:        3,093
+Columns:     25
+Column list: ['inchi_key', 'smiles_std', 'n_sources', 'source_list', 'n_total_measurements', 'pic50_consensus', 'log_value_mean_global', 'log_value_std_global', 'source_spread', 'multi_source', 'concordant', 'discordant', 'high_confidence', 'assay_mechanism_classes', 'use_in_potency_model', 'n_heavy_atoms', 'mol_weight', 'pic50_min', 'pic50_max', 'source_independence_score', 'is_true_multi_source', 'warhead_class', 'is_covalent', 'mechanism_class', 'fragment_flag']
+
+pIC50 column: pic50_consensus
+  min:    2.0000
+  max:    8.5229
+  mean:   6.5500
+  median: 6.8447
+  std:    0.9919
+  ✅  is_covalent present
+    True: 107, False: 2986
+  ✅  warhead_class present
+    value_counts:
+warhead_class
+None                 2986
+chloroacetamidine      66
+fluoroacetamidine      17
+haloacetyl             11
+enaminone               7
+vinyl_sulfone           4
+alpha_bromoketone       2
+  ✅  mechanism_class present
+    value_counts:
+mechanism_class
+enzymatic              2079
+enzymatic_confirmed     878
+fp_ic50                 115
+covalent                 21
+  ✅  fragment_flag present
+    True: 5, False: 3088
+
+Source combination breakdown:
+  bindingdb|chembl|pubchem_confirmatory                    1366
+  bindingdb|pubchem_confirmatory                           1199
+  pubchem_confirmatory                                      233
+  bindingdb|chembl                                          167
+  bindingdb                                                  95
+  chembl|pubchem_confirmatory                                23
+  chembl                                                     10
+
+======================================================================
+  2. ALL PROCESSED PARQUET FILES
+======================================================================
+  activity_cliffs.parquet                                 867 rows   11 cols  0.0 MB
+    columns: ['inchi_key_a', 'inchi_key_b', 'tanimoto', 'pic50_a', 'pic50_b', 'delta_pic50', 'cliff_tier', 'source_combination', 'patent_exclusive_a', 'patent_exclusive_b', 'any_patent_exclusive']
+  activity_cliffs_dryrun.parquet                            3 rows   11 cols  0.0 MB
+    columns: ['inchi_key_a', 'inchi_key_b', 'tanimoto', 'pic50_a', 'pic50_b', 'delta_pic50', 'cliff_tier', 'source_combination', 'patent_exclusive_a', 'patent_exclusive_b', 'any_patent_exclusive']
+  activity_pairs_sim_ge06.parquet                     358,416 rows   14 cols  2.2 MB
+    columns: ['inchi_key_a', 'inchi_key_b', 'tanimoto', 'pic50_a', 'pic50_b', 'delta_pic50', 'source_a', 'source_b', 'source_combination', 'same_source', 'cliff_tier', 'patent_exclusive_a', 'patent_exclusive_b', 'any_patent_exclusive']
+  activity_pairs_sim_ge06_dryrun.parquet                2,427 rows   14 cols  0.0 MB
+    columns: ['inchi_key_a', 'inchi_key_b', 'tanimoto', 'pic50_a', 'pic50_b', 'delta_pic50', 'source_a', 'source_b', 'source_combination', 'same_source', 'cliff_tier', 'patent_exclusive_a', 'patent_exclusive_b', 'any_patent_exclusive']
+  activity_pairs_with_sali.parquet                    358,416 rows   15 cols  5.2 MB
+    columns: ['inchi_key_a', 'inchi_key_b', 'tanimoto', 'pic50_a', 'pic50_b', 'delta_pic50', 'source_a', 'source_b', 'source_combination', 'same_source', 'cliff_tier', 'patent_exclusive_a', 'patent_exclusive_b', 'any_patent_exclusive', 'sali']
+  hts_compound_index.parquet                          327,336 rows    9 cols  13.3 MB
+    columns: ['inchi_key', 'smiles_std', 'n_hts_assays', 'max_pct_inh', 'any_active', 'hts_activity_score', 'hts_consensus_confidence', 'hts_outcome', 'confirmed_in_potency_space']
+  hts_compound_index_dryrun.parquet                     1,000 rows    9 cols  0.1 MB
+    columns: ['inchi_key', 'smiles_std', 'n_hts_assays', 'max_pct_inh', 'any_active', 'hts_activity_score', 'hts_consensus_confidence', 'hts_outcome', 'confirmed_in_potency_space']
+  pad4_compounds.parquet                                3,093 rows   25 cols  0.2 MB
+    columns: ['inchi_key', 'smiles_std', 'n_sources', 'source_list', 'n_total_measurements', 'pic50_consensus', 'log_value_mean_global', 'log_value_std_global', 'source_spread', 'multi_source', 'concordant', 'discordant', 'high_confidence', 'assay_mechanism_classes', 'use_in_potency_model', 'n_heavy_atoms', 'mol_weight', 'pic50_min', 'pic50_max', 'source_independence_score', 'is_true_multi_source', 'warhead_class', 'is_covalent', 'mechanism_class', 'fragment_flag']
+  pad4_compounds_dryrun.parquet                           479 rows   19 cols  0.0 MB
+    columns: ['inchi_key', 'smiles_std', 'n_sources', 'source_list', 'n_total_measurements', 'pic50_consensus', 'log_value_mean_global', 'log_value_std_global', 'source_spread', 'multi_source', 'concordant', 'discordant', 'high_confidence', 'assay_mechanism_classes', 'use_in_potency_model', 'n_heavy_atoms', 'mol_weight', 'pic50_min', 'pic50_max']
+  pad4_compounds_pre_columns_2026-06-15.parquet         3,093 rows   21 cols  0.2 MB
+    columns: ['inchi_key', 'smiles_std', 'n_sources', 'source_list', 'n_total_measurements', 'pic50_consensus', 'log_value_mean_global', 'log_value_std_global', 'source_spread', 'multi_source', 'concordant', 'discordant', 'high_confidence', 'assay_mechanism_classes', 'use_in_potency_model', 'n_heavy_atoms', 'mol_weight', 'pic50_min', 'pic50_max', 'source_independence_score', 'is_true_multi_source']
+  pad4_compounds_pre_remediation_2026-06-16.parquet     3,093 rows   25 cols  0.2 MB
+    columns: ['inchi_key', 'smiles_std', 'n_sources', 'source_list', 'n_total_measurements', 'pic50_consensus', 'log_value_mean_global', 'log_value_std_global', 'source_spread', 'multi_source', 'concordant', 'discordant', 'high_confidence', 'assay_mechanism_classes', 'use_in_potency_model', 'n_heavy_atoms', 'mol_weight', 'pic50_min', 'pic50_max', 'source_independence_score', 'is_true_multi_source', 'warhead_class', 'is_covalent', 'mechanism_class', 'fragment_flag']
+
+======================================================================
+  3. INTERIM FILES
+======================================================================
+  data/interim/normalized/dedup_aid_level.parquet              0.1 MB
+  data/interim/normalized/dedup_aid_level_dryrun.parquet       0.0 MB
+  data/interim/normalized/hts_space.parquet                    13.4 MB
+  data/interim/normalized/normalized_activities.parquet        6.1 MB
+  data/interim/normalized/normalized_activities_dryrun.parquet 0.1 MB
+  data/interim/normalized/potency_space.parquet                0.2 MB
+  data/interim/normalized/replicate_aggregated.parquet         13.7 MB
+  data/interim/normalized/replicate_aggregated_dryrun.parquet  0.2 MB
+  data/interim/shared_assets.parquet                           0.3 MB
+  data/interim/standardized/standardized_compounds.parquet     25.9 MB
+  data/interim/standardized/standardized_compounds_dryrun.parquet 0.0 MB
+  data/interim/morgan_fps_3093.npy                             6.3 MB
+  data/interim/tsne_coords_3093.npy                            0.0 MB
+  data/interim/tsne_inchikeys_3093.npy                         0.1 MB
+
+======================================================================
+  4. ACTIVITY CLIFFS
+======================================================================
+Total cliff pairs: 867
+Columns: ['inchi_key_a', 'inchi_key_b', 'tanimoto', 'pic50_a', 'pic50_b', 'delta_pic50', 'cliff_tier', 'source_combination', 'patent_exclusive_a', 'patent_exclusive_b', 'any_patent_exclusive']
+Severe   (Δ≥2.0): 94
+Moderate (Δ≥1.5): 193
+Broad    (Δ≥1.0): 580
+Max delta_pic50:   3.0448
+
+Top 10 compounds by severe cliff degree:
+  SMADULGDNOCLOP-GISFHXKWSA-N  degree=15
+  RAVBZQAQTVGKIV-XBPDSQQVSA-N  degree=12
+  UDCDEKJNAMHBFH-HSZRJFAPSA-N  degree=12
+  DVCKJOQIVOGXEI-XMMPIXPASA-N  degree=11
+  DFQZFXZWGBIVAD-CLJLJLNGSA-N  degree=5
+  QGGNDXGZJHUSSA-GOSISDBHSA-N  degree=4
+  YDUZIQDWBSFXRB-GYZOCXDNSA-N  degree=4
+  JHCOCDUNEWCPDJ-LJQANCHMSA-N  degree=4
+  VCWHGOPUEXSIAX-JOCHJYFZSA-N  degree=3
+  CQWFGKDJGWSGSK-OAQYLSRUSA-N  degree=3
+
+Tier column (cliff_tier) value_counts:
+cliff_tier
+broad       580
+moderate    193
+severe       94
+
+======================================================================
+  5. SALI PAIRS FILE
+======================================================================
+Total pairs:       358,416
+Columns:           ['inchi_key_a', 'inchi_key_b', 'tanimoto', 'pic50_a', 'pic50_b', 'delta_pic50', 'source_a', 'source_b', 'source_combination', 'same_source', 'cliff_tier', 'patent_exclusive_a', 'patent_exclusive_b', 'any_patent_exclusive', 'sali']
+SALI NaN count:    198
+SALI max:          65.8802
+SALI > 10:         335
+SALI > 20:         19
+Pairs sim>=0.8:    12,071
+
+======================================================================
+  6. MMP OUTPUTS
+======================================================================
+  mmp_discontinuity_scores.csv                           99 rows
+    columns: ['inchi_key', 'pic50_consensus', 'severe_cliff_degree', 'hub_class', 'discontinuity_score', 'n_mmp_partners']
+    top discontinuity: IUZXRGLRAITQQP-RUZDI score=2.4713
+  mmp_pairs_cliff99.csv                                 707 rows
+    columns: ['inchi_key_a', 'inchi_key_b', 'shared_core', 'n_shared_cores', 'delta_pic50', 'tanimoto', 'cliff_tier', 'mmp_large_delta', 'hub_a', 'hub_b', 'mmp_type', 'is_canonical_severe_cliff']
+    tier breakdown: {'non_cliff': 595, 'severe': 85, 'moderate': 25, 'broad': 2}
+    mmp_type breakdown: {'single_atom_change': 345, 'small_substituent': 259, 'medium_substituent': 101, 'large_substituent': 2}
+
+======================================================================
+  7. SCAFFOLD FILES
+======================================================================
+Scaffold summary rows: 1,244
+Columns: ['scaffold_smiles', 'n_compounds', 'mean_pic50', 'std_pic50', 'pic50_range', 'contains_patent_exclusive', 'patent_exclusive_scaffold']
+Unique scaffolds:      1244
+Series (>=2):          375
+Singletons:            869
+Largest series:        174
+
+======================================================================
+  8. AUDIT OUTPUTS
+======================================================================
+  A1_aid_audit.csv                                   5.4 KB
+  A1_audit_report.txt                                4.9 KB
+  A1_audit_summary.json                              2.0 KB
+  A1_chemical_correctness.csv                        0.6 KB
+  A1_compound_bio_audit.csv                          253.2 KB
+  A2_reference_recovery.json                         21.3 KB
+  DOWNLOAD_DATES.txt                                 0.5 KB
+  DROPPED_ROWS_13.txt                                6.5 KB
+  INCHIKEY_RECONCILIATION.txt                        0.6 KB
+  JBI589_DISCREPANCY_NOTE.txt                        0.6 KB
+  LOW_MW_COMPOUNDS.txt                               4.1 KB
+  MASTER_VERIFICATION_TABLE.txt                      5.9 KB
+  MECHANISM_DIAGNOSTIC_v2.txt                        1.2 KB
+  ORPHAN_IK_RESOLUTION.txt                           1.6 KB
+  PAD4_DB_PRE_FIGURE_READINESS_REPORT.md             12.4 KB
+  SCAFFOLD_METHOD.txt                                0.9 KB
+  SELECTIVITY_AIDS.txt                               0.6 KB
+  SOURCE_INDEPENDENCE_SCORE_FORMULA.txt              1.1 KB
+  hts_readiness_audit.md                             3.0 KB
+  hub_recovery_audit.md                              3.6 KB
+  pre_figure_dataset_audit.md                        3.7 KB
+  scaffold_family_audit.md                           4.7 KB
+  severe_cliff_compounds.txt                         2.9 KB
+
+MASTER_VERIFICATION_TABLE: 51 PASS, 1 FAIL
+
+======================================================================
+  9. FIGURE FILES — ALL LOCATIONS
+======================================================================
+
+outputs/figures: 12 PNG, 11 SVG, 0 PDF
+  fig10_patent_scaffolds.png                                629.2 KB
+  fig10_patent_scaffolds.svg                                239.7 KB
+  fig11_independence_scores.png                             257.6 KB
+  fig11_independence_scores.svg                             174.1 KB
+  fig1_pipeline_workflow.png                                269.8 KB
+  fig1_pipeline_workflow.svg                                128.1 KB
+  fig2_debug.png                                             19.9 KB
+  fig2_source_overlap_upset.png                             159.0 KB
+  fig2_source_overlap_upset.svg                              83.4 KB
+  fig3_tsne_chemical_space.png                             1688.3 KB
+  fig3_tsne_chemical_space.svg                              450.2 KB
+  fig4_pic50_distribution.png                               526.3 KB
+  fig4_pic50_distribution.svg                               398.8 KB
+  fig5_scaffold_landscape.png                               591.8 KB
+  fig5_scaffold_landscape.svg                               315.4 KB
+  fig6_similarity_landscape.png                             594.1 KB
+  fig6_similarity_landscape.svg                            1068.8 KB
+  fig7_cliff_network.png                                   1222.1 KB
+  fig7_cliff_network.svg                                    246.2 KB
+  fig8_mmp_analysis.png                                     334.8 KB
+  fig8_mmp_analysis.svg                                     253.4 KB
+  fig9_sali_analysis.png                                    665.8 KB
+  fig9_sali_analysis.svg                                    319.3 KB
+
+outputs/figures/nature: 11 PNG, 11 SVG, 13 PDF
+  PAD4_DB_v2_FULL_REVIEW.pdf                               9126.4 KB
+  PAD4_DB_v2_nature_figures.pdf                            4486.2 KB
+  fig10_patent.pdf                                           54.3 KB
+  fig10_patent.png                                          787.4 KB
+  fig10_patent.svg                                          127.1 KB
+  fig11_independence.pdf                                     41.5 KB
+  fig11_independence.png                                    385.8 KB
+  fig11_independence.svg                                    134.1 KB
+  fig1_pipeline.pdf                                          55.4 KB
+  fig1_pipeline.png                                         666.0 KB
+  fig1_pipeline.svg                                         113.1 KB
+  fig2_upset.pdf                                             25.9 KB
+  fig2_upset.png                                            230.1 KB
+  fig2_upset.svg                                             61.3 KB
+  fig3_tsne.pdf                                             111.0 KB
+  fig3_tsne.png                                            1420.2 KB
+  fig3_tsne.svg                                             211.4 KB
+  fig4_pic50.pdf                                             69.2 KB
+  fig4_pic50.png                                            723.3 KB
+  fig4_pic50.svg                                            292.7 KB
+  fig5_scaffold.pdf                                          99.6 KB
+  fig5_scaffold.png                                         784.4 KB
+  fig5_scaffold.svg                                         266.6 KB
+  fig6_similarity.pdf                                        82.5 KB
+  fig6_similarity.png                                      1269.7 KB
+  fig6_similarity.svg                                       226.4 KB
+  fig7_network.pdf                                           55.4 KB
+  fig7_network.png                                         1091.8 KB
+  fig7_network.svg                                          117.4 KB
+  fig8_mmp.pdf                                               50.5 KB
+  fig8_mmp.png                                              541.8 KB
+  fig8_mmp.svg                                              136.5 KB
+  fig9_sali.pdf                                              62.6 KB
+  fig9_sali.png                                             655.1 KB
+  fig9_sali.svg                                             136.7 KB
+
+outputs/figures/nature_v2: 11 PNG, 0 SVG, 12 PDF
+  PAD4_DB_v2_REVIEW_v2.pdf                                 4788.9 KB
+  fig01_headline.pdf                                        329.8 KB
+  fig01_headline.png                                        841.9 KB
+  fig02_source_overlap.pdf                                   30.0 KB
+  fig02_source_overlap.png                                  135.5 KB
+  fig03_potency.pdf                                          47.2 KB
+  fig03_potency.png                                         402.2 KB
+  fig04_scaffold.pdf                                        179.1 KB
+  fig04_scaffold.png                                        489.5 KB
+  fig05_cliff_network.pdf                                    37.8 KB
+  fig05_cliff_network.png                                   924.4 KB
+  fig06_mmp.pdf                                              36.2 KB
+  fig06_mmp.png                                             308.3 KB
+  supp_s01_pipeline.pdf                                      32.0 KB
+  supp_s01_pipeline.png                                     161.8 KB
+  supp_s02_sali.pdf                                         122.3 KB
+  supp_s02_sali.png                                         356.1 KB
+  supp_s03_patent.pdf                                       185.7 KB
+  supp_s03_patent.png                                       275.9 KB
+  supp_s04_independence.pdf                                  31.7 KB
+  supp_s04_independence.png                                 210.5 KB
+  supp_s05_scaffold_structures.pdf                          756.3 KB
+  supp_s05_scaffold_structures.png                          250.4 KB
+
+======================================================================
+  10. TABLE FILES — ALL LOCATIONS
+======================================================================
+
+outputs/tables: 27 files
+  01_standardization_report.csv                               5.2 KB
+  01_standardization_report_dryrun.csv                        0.1 KB
+  02_normalization_report.csv                                 6.1 KB
+  02_normalization_report_dryrun.csv                          6.1 KB
+  03b_logspace_qc.json                                        0.5 KB
+  03c_smiles_integrity.json                                   0.2 KB
+  05_cliff_summary.json                                       1.2 KB
+  05_cliff_summary_dryrun.json                                1.1 KB
+  05_patent_exclusive_cliff_contribution.json                 0.2 KB
+  05_patent_exclusive_cliff_contribution_dryrun.json          0.2 KB
+  05_scaffold_summary.csv                                   140.0 KB
+  05_scaffold_summary_dryrun.csv                             13.9 KB
+  fig10_patent_stats.html                                     9.8 KB
+  fig11_independence_stats.html                              11.3 KB
+  fig3_tsne_summary.html                                     10.1 KB
+  fig4_distribution_stats.html                               10.4 KB
+  fig4_distribution_stats.tex                                 0.7 KB
+  fig5_scaffold_stats.html                                   17.0 KB
+  fig5_scaffold_stats.tex                                     2.3 KB
+  fig6_sali_stats.html                                       10.5 KB
+  fig6_sali_stats.tex                                         0.9 KB
+  fig7_cliff_stats.html                                      11.8 KB
+  fig7_cliff_stats.tex                                        1.0 KB
+  fig8_mmp_stats.html                                         8.9 KB
+  fig8_mmp_stats.tex                                          0.7 KB
+  fig9_sali_top_pairs.html                                   15.7 KB
+  scaffold_top50_review.csv                                  20.9 KB
+
+outputs/tables/nature: 9 files
+  table1_source_coverage.html                                11.6 KB
+  table2_mechanism.html                                      11.6 KB
+  table3_scaffolds.html                                      18.1 KB
+  table4_sali.html                                           11.1 KB
+  table5_hubs.html                                           14.8 KB
+  table6_mmp.html                                            10.8 KB
+  table7_sali_pairs.html                                     23.0 KB
+  table8_patent.html                                          9.8 KB
+  table9_independence.html                                   12.8 KB
+
+outputs/tables/nature_v2: 0 files
+
+======================================================================
+  11. SCRIPTS INVENTORY
+======================================================================
+
+scripts: 56 Python scripts
+  scripts/01_standardize/01_standardize_smiles.py                   2026-06-14 18:10
+  scripts/02_normalize/02_normalize_activities.py                   2026-06-14 18:54
+  scripts/03_aggregate/03_replicate_aggregate.py                    2026-06-14 19:15
+  scripts/03_aggregate/03a_split_spaces.py                          2026-06-14 19:19
+  scripts/03_aggregate/03b_logspace_qc.py                           2026-06-14 19:19
+  scripts/03_aggregate/03c_smiles_integrity.py                      2026-06-14 19:20
+  scripts/04_dedup/04_dedup_and_assemble.py                         2026-06-14 19:36
+  scripts/04_dedup/04b_add_independence_scores.py                   2026-06-14 19:45
+  scripts/05_cliffs/05_scaffold_and_cliffs.py                       2026-06-14 23:48
+  scripts/audit/A1_biological_audit.py                              2026-06-14 20:22
+  scripts/audit/A2_reference_compound_recovery.py                   2026-06-14 23:06
+  scripts/audit/MASTER_AUDIT.py                                     2026-06-15 09:14
+  scripts/diagnostic_mechanism.py                                   2026-06-15 13:04
+  scripts/fig10_patent_scaffolds.py                                 2026-06-15 19:20
+  scripts/fig11_independence_scores.py                              2026-06-15 19:19
+  scripts/fig1_pipeline_workflow.py                                 2026-06-15 19:16
+  scripts/fig2_upset.py                                             2026-06-15 14:14
+  scripts/fig3_tsne.py                                              2026-06-15 14:37
+  scripts/fig4_pic50_distribution.py                                2026-06-15 14:42
+  scripts/fig5_scaffold_landscape.py                                2026-06-15 14:49
+  scripts/fig6_similarity_landscape.py                              2026-06-15 14:57
+  scripts/fig7_cliff_network.py                                     2026-06-15 15:02
+  scripts/fig7_data_prep.py                                         2026-06-15 14:30
+  scripts/fig8_mmp_analysis.py                                      2026-06-15 15:36
+  scripts/fig9_sali_analysis.py                                     2026-06-15 19:17
+  scripts/final_audit.py                                            2026-06-15 19:47
+  scripts/generate_pdf.py                                           2026-06-15 19:49
+  scripts/generate_project_state_report.py                          2026-06-16 01:34
+  scripts/nature/build_review_pdf.py                                2026-06-15 21:36
+  scripts/nature/build_review_pdf_v2.py                             2026-06-16 01:25
+  scripts/nature/fig01_headline.py                                  2026-06-16 01:08
+  scripts/nature/fig02_source_overlap.py                            2026-06-16 01:08
+  scripts/nature/fig03_potency.py                                   2026-06-16 01:09
+  scripts/nature/fig04_scaffold.py                                  2026-06-16 01:10
+  scripts/nature/fig05_cliff_network.py                             2026-06-16 01:11
+  scripts/nature/fig06_mmp.py                                       2026-06-16 01:12
+  scripts/nature/fig10_patent.py                                    2026-06-15 21:14
+  scripts/nature/fig11_independence.py                              2026-06-15 21:15
+  scripts/nature/fig1_pipeline.py                                   2026-06-15 20:58
+  scripts/nature/fig2_upset.py                                      2026-06-15 20:59
+  scripts/nature/fig3_tsne.py                                       2026-06-15 20:59
+  scripts/nature/fig4_pic50.py                                      2026-06-15 21:00
+  scripts/nature/fig5_scaffold.py                                   2026-06-15 21:00
+  scripts/nature/fig6_similarity.py                                 2026-06-15 21:01
+  scripts/nature/fig7_network.py                                    2026-06-15 20:49
+  scripts/nature/fig8_mmp.py                                        2026-06-15 21:12
+  scripts/nature/fig9_sali.py                                       2026-06-15 21:14
+  scripts/nature/generate_tables.py                                 2026-06-16 01:16
+  scripts/nature/precompute_shared.py                               2026-06-16 01:06
+  scripts/nature/supp_s01_pipeline.py                               2026-06-16 01:13
+  scripts/nature/supp_s02_sali.py                                   2026-06-16 01:13
+  scripts/nature/supp_s03_patent.py                                 2026-06-16 01:13
+  scripts/nature/supp_s04_independence.py                           2026-06-16 01:14
+  scripts/nature/supp_s05_scaffold_structures.py                    2026-06-16 01:14
+  scripts/nature/tables_nature.py                                   2026-06-15 21:28
+  scripts/nature_style.py                                           2026-06-15 20:19
+
+======================================================================
+  12. CACHED ASSETS
+======================================================================
+  ✅  morgan_fps_3093.npy: 6.3 MB
+  ✅  tsne_coords_3093.npy: 0.0 MB
+  ✅  shared_assets.parquet: 0.3 MB
+  data/interim/normalized/dedup_aid_level.parquet              0.1 MB
+  data/interim/normalized/dedup_aid_level_dryrun.parquet       0.0 MB
+  data/interim/normalized/hts_space.parquet                    13.4 MB
+  data/interim/normalized/normalized_activities.parquet        6.1 MB
+  data/interim/normalized/normalized_activities_dryrun.parquet 0.1 MB
+  data/interim/normalized/potency_space.parquet                0.2 MB
+  data/interim/normalized/replicate_aggregated.parquet         13.7 MB
+  data/interim/normalized/replicate_aggregated_dryrun.parquet  0.2 MB
+  data/interim/scaffold_family_map.csv                         0.2 MB
+  data/interim/standardized/standardized_compounds.parquet     25.9 MB
+  data/interim/standardized/standardized_compounds_dryrun.parquet 0.0 MB
+  data/interim/tsne_inchikeys_3093.npy                         0.1 MB
+
+======================================================================
+  13. LOCKED NUMBERS SPOT CHECK
+======================================================================
+
+Spot-checking locked numbers against live data:
+Metric                                       Locked Status
+-----------------------------------------------------------------
+SAR compounds                                 3,093 ✅ actual=3093
+pIC50 max                                      8.52 ✅ actual=8.5229
+Severe cliff pairs                               94 ✅ actual=94
+Total SALI pairs                            358,416 ✅ actual=358416
+SALI max                                      65.88 ✅ actual=65.8802
+
+======================================================================
+  14. CLAUDE.md SNAPSHOT
+======================================================================
+CLAUDE.md exists: 25.9 KB
+First 3,000 characters:
+# PAD4-DB v2 — Project Guide
+
+## Project
+**Name:** PAD4-DB v2  
+**Purpose:** Curated SAR knowledge base of PAD4 (Protein-Arginine Deiminase 4) inhibitors, aggregating PubChem bioassay data, ChEMBL, and BindingDB into a single standardized, deduplicated compound set for SAR analysis and publication.  
+**Conda env:** `pad4bench` (Python 3.12, RDKit 2025.09.5, pandas, pyarrow)
+
+## Rules
+- Always run scripts from the **project root** (`/home/nidhal/PAD4-db_V2/`)
+- Always activate `pad4bench` before running any script: `conda activate pad4bench`
+- Never hardcode absolute paths — all paths relative to project root
+- Fail loudly on missing files; no silent skips
+
+## Directory Map
+
+```
+PAD4-db_V2/
+├── data/
+│   ├── raw/
+│   │   ├── hts/                        3 HTS AIDs (463073, 485272, 488796)
+│   │   ├── pubchem/
+│   │   │   ├── confirmatory/           57 Layer A AIDs
+│   │   │   ├── literature_derived/     11 Layer C AIDs
+│   │   │   └── secondary/              26 Layer D+E AIDs
+│   │   ├── chembl/                     CHEMBL6111 CSV (semicolon-delimited, 4925 rows)
+│   │   └── bindingdb/                  Q9UM07 TSV (tab-delimited, 3087 rows)
+│   └── interim/
+│       ├── standardized/               standardized_compounds.parquet (Step 01 output)
+│       └── normalized/                 normalized_activities.parquet (Step 02 output)
+├── outputs/
+│   └── tables/                         QC reports (CSV + TXT)
+├── scripts/
+│   ├── 01_standardize/
+│   │   └── 01_standardize_smiles.py
+│   ├── 02_normalize/
+│   │   └── 02_normalize_activities.py
+│   ├── 03_aggregate/
+│   │   ├── 03_replicate_aggregate.py
+│   │   ├── 03a_split_spaces.py
+│   │   ├── 03b_logspace_qc.py
+│   │   └── 03c_smiles_integrity.py
+│   └── 04_dedup/
+│       ├── 04_dedup_and_assemble.py
+│       └── 04b_add_independence_scores.py
+└── CLAUDE.md
+```
+
+## Pipeline Stage Status
+
+| Stage | Script | Status |
+|-------|--------|--------|
+| 00 Raw inventory QC | `00_check_raw_inventory.py` (project root) | ✅ done |
+| 01 SMILES standardization | `scripts/01_standardize/01_standardize_smiles.py` | ✅ done |
+| 02 Activity normalization | `scripts/02_normalize/02_normalize_activities.py` | ✅ done |
+| 03 Replicate aggregation | `scripts/03_aggregate/03_replicate_aggregate.py` | ✅ done |
+| 04 Dedup + assembly | `scripts/04_dedup/04_dedup_and_assemble.py` | ✅ done |
+| Audit A1 Biological & chemical audit | `scripts/audit/A1_biological_audit.py` | ✅ done |
+| Audit A2 Reference compound recovery | `scripts/audit/A2_reference_compound_recovery.py` | ✅ done |
+| 05 SAR analysis (scaffold + cliffs) | `scripts/05_cliffs/05_scaffold_and_cliffs.py` | ✅ done |
+
+## Key Decisions
+
+1. **AID 2202576/77 (RFMS1 vs RFMS2):** 55 SID overlap (23.8%). Keep both AIDs. During dedup, prefer AID 2202577 (RFMS2) for the 55 overlapping SIDs. Tag `aid_preferred = 2202577` for those rows.
+
+2. **AID 2202596/97 (Functional 1 vs 2):** 0 SID overlap — completely distinct compound sets. No dedup needed between these two AIDs.
+
+3. **AID 725596
+...[truncated]...
+
+======================================================================
+  15. DIRECTORY TREE SUMMARY
+======================================================================
+
+Total files (excl. raw data): 159
+  00_check_raw_inventory.py                                                  29.3 KB
+  AID_dowloed.py                                                             32.2 KB
+  CLAUDE.md                                                                  25.9 KB
+  FIGURE_READINESS_REMEDIATION_REPORT.md                                     13.7 KB
+  HANDOFF.md                                                                 26.5 KB
+  covaltest.py                                                                0.6 KB
+  data/interim/morgan_fps_3093.npy                                         6334.6 KB
+  data/interim/scaffold_family_map.csv                                      201.2 KB
+  data/interim/shared_assets.parquet                                        266.8 KB
+  data/interim/tsne_coords_3093.npy                                          24.9 KB
+  data/interim/tsne_inchikeys_3093.npy                                       93.1 KB
+  data/processed/activity_cliffs.parquet                                     38.5 KB
+  data/processed/activity_cliffs_dryrun.parquet                               7.3 KB
+  data/processed/activity_pairs_sim_ge06.parquet                           2176.4 KB
+  data/processed/activity_pairs_sim_ge06_dryrun.parquet                      35.1 KB
+  data/processed/activity_pairs_with_sali.parquet                          5163.7 KB
+  data/processed/hts_compound_index.parquet                               13285.8 KB
+  data/processed/hts_compound_index_dryrun.parquet                           52.7 KB
+  data/processed/pad4_compounds.parquet                                     193.6 KB
+  data/processed/pad4_compounds_dryrun.parquet                               38.1 KB
+  data/processed/pad4_compounds_pre_columns_2026-06-15.parquet              191.0 KB
+  data/processed/pad4_compounds_pre_remediation_2026-06-16.parquet          193.7 KB
+  outputs/PROJECT_STATE_REPORT.txt                                           44.8 KB
+  outputs/audit/A1_aid_audit.csv                                              5.4 KB
+  outputs/audit/A1_audit_report.txt                                           4.9 KB
+  outputs/audit/A1_audit_summary.json                                         2.0 KB
+  outputs/audit/A1_chemical_correctness.csv                                   0.6 KB
+  outputs/audit/A1_compound_bio_audit.csv                                   253.2 KB
+  outputs/audit/A2_reference_recovery.json                                   21.3 KB
+  outputs/audit/DOWNLOAD_DATES.txt                                            0.5 KB
+  outputs/audit/DROPPED_ROWS_13.txt                                           6.5 KB
+  outputs/audit/INCHIKEY_RECONCILIATION.txt                                   0.6 KB
+  outputs/audit/JBI589_DISCREPANCY_NOTE.txt                                   0.6 KB
+  outputs/audit/LOW_MW_COMPOUNDS.txt                                          4.1 KB
+  outputs/audit/MASTER_VERIFICATION_TABLE.txt                                 5.9 KB
+  outputs/audit/MECHANISM_DIAGNOSTIC_v2.txt                                   1.2 KB
+  outputs/audit/ORPHAN_IK_RESOLUTION.txt                                      1.6 KB
+  outputs/audit/PAD4_DB_PRE_FIGURE_READINESS_REPORT.md                       12.4 KB
+  outputs/audit/SCAFFOLD_METHOD.txt                                           0.9 KB
+  outputs/audit/SELECTIVITY_AIDS.txt                                          0.6 KB
+  outputs/audit/SOURCE_INDEPENDENCE_SCORE_FORMULA.txt                         1.1 KB
+  outputs/audit/hts_readiness_audit.md                                        3.0 KB
+  outputs/audit/hub_recovery_audit.md                                         3.6 KB
+  outputs/audit/pre_figure_dataset_audit.md                                   3.7 KB
+  outputs/audit/scaffold_family_audit.md                                      4.7 KB
+  outputs/audit/severe_cliff_compounds.txt                                    2.9 KB
+  outputs/figures/fig10_patent_scaffolds.png                                629.2 KB
+  outputs/figures/fig10_patent_scaffolds.svg                                239.7 KB
+  outputs/figures/fig11_independence_scores.png                             257.6 KB
+  outputs/figures/fig11_independence_scores.svg                             174.1 KB
+  outputs/figures/fig1_pipeline_workflow.png                                269.8 KB
+  outputs/figures/fig1_pipeline_workflow.svg                                128.1 KB
+  outputs/figures/fig2_debug.png                                             19.9 KB
+  outputs/figures/fig2_source_overlap_upset.png                             159.0 KB
+  outputs/figures/fig2_source_overlap_upset.svg                              83.4 KB
+  outputs/figures/fig3_tsne_chemical_space.png                             1688.3 KB
+  outputs/figures/fig3_tsne_chemical_space.svg                              450.2 KB
+  outputs/figures/fig4_pic50_distribution.png                               526.3 KB
+  outputs/figures/fig4_pic50_distribution.svg                               398.8 KB
+  outputs/figures/fig5_scaffold_landscape.png                               591.8 KB
+  outputs/figures/fig5_scaffold_landscape.svg                               315.4 KB
+  outputs/figures/fig6_similarity_landscape.png                             594.1 KB
+  outputs/figures/fig6_similarity_landscape.svg                            1068.8 KB
+  outputs/figures/fig7_cliff_network.png                                   1222.1 KB
+  outputs/figures/fig7_cliff_network.svg                                    246.2 KB
+  outputs/figures/fig7_edges.csv                                             11.7 KB
+  outputs/figures/fig7_nodes.csv                                             16.3 KB
+  outputs/figures/fig8_mmp_analysis.png                                     334.8 KB
+  outputs/figures/fig8_mmp_analysis.svg                                     253.4 KB
+  outputs/figures/fig9_sali_analysis.png                                    665.8 KB
+  outputs/figures/fig9_sali_analysis.svg                                    319.3 KB
+  outputs/final_audit/FINAL_VERIFICATION_TABLE.txt                           15.4 KB
+  outputs/final_audit/PAD4_DB_v2_figures_and_tables.pdf                    7951.4 KB
+  outputs/mmp/mmp_discontinuity_scores.csv                                    7.3 KB
+  outputs/mmp/mmp_pairs_cliff99.csv                                         144.5 KB
+  outputs/tables/01_standardization_report.csv                                5.2 KB
+  outputs/tables/01_standardization_report_dryrun.csv                         0.1 KB
+  outputs/tables/02_normalization_report.csv                                  6.1 KB
+  outputs/tables/02_normalization_report_dryrun.csv                           6.1 KB
+  outputs/tables/03b_logspace_qc.json                                         0.5 KB
+  outputs/tables/03c_smiles_integrity.json                                    0.2 KB
+  outputs/tables/05_cliff_summary.json                                        1.2 KB
+  outputs/tables/05_cliff_summary_dryrun.json                                 1.1 KB
+  outputs/tables/05_patent_exclusive_cliff_contribution.json                  0.2 KB
+  outputs/tables/05_patent_exclusive_cliff_contribution_dryrun.json           0.2 KB
+  outputs/tables/05_scaffold_summary.csv                                    140.0 KB
+  outputs/tables/05_scaffold_summary_dryrun.csv                              13.9 KB
+  outputs/tables/fig10_patent_stats.html                                      9.8 KB
+  outputs/tables/fig11_independence_stats.html                               11.3 KB
+  outputs/tables/fig3_tsne_summary.html                                      10.1 KB
+  outputs/tables/fig4_distribution_stats.html                                10.4 KB
+  outputs/tables/fig4_distribution_stats.tex                                  0.7 KB
+  outputs/tables/fig5_scaffold_stats.html                                    17.0 KB
+  outputs/tables/fig5_scaffold_stats.tex                                      2.3 KB
+  outputs/tables/fig6_sali_stats.html                                        10.5 KB
+  outputs/tables/fig6_sali_stats.tex                                          0.9 KB
+  outputs/tables/fig7_cliff_stats.html                                       11.8 KB
+  outputs/tables/fig7_cliff_stats.tex                                         1.0 KB
+  outputs/tables/fig8_mmp_stats.html                                          8.9 KB
+  outputs/tables/fig8_mmp_stats.tex                                           0.7 KB
+  outputs/tables/fig9_sali_top_pairs.html                                    15.7 KB
+  outputs/tables/scaffold_top50_review.csv                                   20.9 KB
+  scripts/01_standardize/01_standardize_smiles.py                            22.8 KB
+  scripts/02_normalize/02_normalize_activities.py                            36.5 KB
+  scripts/03_aggregate/03_replicate_aggregate.py                             11.4 KB
+  scripts/03_aggregate/03a_split_spaces.py                                    1.7 KB
+  scripts/03_aggregate/03b_logspace_qc.py                                     5.4 KB
+  scripts/03_aggregate/03c_smiles_integrity.py                                5.1 KB
+  scripts/04_dedup/04_dedup_and_assemble.py                                  20.0 KB
+  scripts/04_dedup/04b_add_independence_scores.py                             2.8 KB
+  scripts/05_cliffs/05_scaffold_and_cliffs.py                                21.7 KB
+  scripts/__pycache__/nature_style.cpython-310.pyc                            4.6 KB
+  scripts/audit/A1_biological_audit.py                                       27.3 KB
+  scripts/audit/A2_reference_compound_recovery.py                            31.0 KB
+  scripts/audit/MASTER_AUDIT.py                                              60.2 KB
+  scripts/diagnostic_mechanism.py                                             5.6 KB
+  scripts/fig10_patent_scaffolds.py                                           9.4 KB
+  scripts/fig11_independence_scores.py                                        8.0 KB
+  scripts/fig1_pipeline_workflow.py                                           4.6 KB
+  scripts/fig2_upset.py                                                       4.3 KB
+  scripts/fig3_tsne.py                                                       11.8 KB
+  scripts/fig4_pic50_distribution.py                                         13.1 KB
+  scripts/fig5_scaffold_landscape.py                                         13.1 KB
+  scripts/fig6_similarity_landscape.py                                       12.1 KB
+  scripts/fig7_cliff_network.py                                              13.7 KB
+  scripts/fig7_data_prep.py                                                   5.2 KB
+  scripts/fig8_mmp_analysis.py                                               17.0 KB
+  scripts/fig9_sali_analysis.py                                               6.9 KB
+  scripts/final_audit.py                                                     27.3 KB
+  scripts/generate_pdf.py                                                    16.0 KB
+  scripts/generate_project_state_report.py                                   21.7 KB
+  scripts/nature/build_review_pdf.py                                         21.3 KB
+  scripts/nature/build_review_pdf_v2.py                                      16.2 KB
+  scripts/nature/fig01_headline.py                                           15.8 KB
+  scripts/nature/fig02_source_overlap.py                                      7.8 KB
+  scripts/nature/fig03_potency.py                                             8.9 KB
+  scripts/nature/fig04_scaffold.py                                            8.5 KB
+  scripts/nature/fig05_cliff_network.py                                       9.3 KB
+  scripts/nature/fig06_mmp.py                                                 8.8 KB
+  scripts/nature/fig10_patent.py                                              8.3 KB
+  scripts/nature/fig11_independence.py                                        7.1 KB
+  scripts/nature/fig1_pipeline.py                                             7.7 KB
+  scripts/nature/fig2_upset.py                                                4.3 KB
+  scripts/nature/fig3_tsne.py                                                 8.2 KB
+  scripts/nature/fig4_pic50.py                                                9.6 KB
+  scripts/nature/fig5_scaffold.py                                            10.7 KB
+  scripts/nature/fig6_similarity.py                                           8.2 KB
+  scripts/nature/fig7_network.py                                              9.3 KB
+  scripts/nature/fig8_mmp.py                                                 10.1 KB
+  scripts/nature/fig9_sali.py                                                 6.7 KB
+  scripts/nature/generate_tables.py                                          16.4 KB
+  scripts/nature/precompute_shared.py                                        13.1 KB
+  scripts/nature/supp_s01_pipeline.py                                         4.1 KB
+  scripts/nature/supp_s02_sali.py                                             5.2 KB
+  scripts/nature/supp_s03_patent.py                                           2.8 KB
+  scripts/nature/supp_s04_independence.py                                     5.1 KB
+  scripts/nature/supp_s05_scaffold_structures.py                              3.3 KB
+  scripts/nature/tables_nature.py                                            18.4 KB
+  scripts/nature_style.py                                                     5.9 KB
+
+======================================================================
+  16. SAVE REPORT
+======================================================================

@@ -1,0 +1,21 @@
+{
+  "n_ic50_groups": 7319,
+  "n_compared": 7319,
+  "max_abs_diff_log_mean": 0.0,
+  "mean_abs_diff_log_mean": 0.0,
+  "pic50_distribution": {
+    "mean": 6.580545654976936,
+    "std": 0.9600156481804242,
+    "min": 2.0,
+    "max": 8.522878745280337,
+    "p5": 4.823908740944319,
+    "p25": 6.029653123769906,
+    "p50": 6.860120913598763,
+    "p75": 7.236572006437063,
+    "p95": 7.698970004336019
+  },
+  "n_outlier_below_3": 26,
+  "n_outlier_above_12": 0,
+  "outlier_fraction_below_3": 0.003552397868561279,
+  "outlier_fraction_above_12": 0.0
+}
