@@ -97,3 +97,13 @@ _archive/
 
 __pycache__/
 *.pyc
+# Add the Zenodo metadata
+git add PAD4_DB_FINAL/.zenodo.json
+
+# Add the essential tracked folders (your .gitignore will automatically exclude raw/ and interim/)
+git add PAD4_DB_FINAL/data/processed/
+git add PAD4_DB_FINAL/pipeline/
+git add PAD4_DB_FINAL/analysis/
+git add PAD4_DB_FINAL/figures/
+git add PAD4_DB_FINAL/README.md
+git add PAD4_DB_FINAL/LICENSE
